@@ -1,0 +1,132 @@
+<aside>
+    <div class="logo">
+        <a href="#"><img src="tmp/tiny_logo.jpg" /></a>
+    </div>
+    <form [formGroup]="userForm">
+    <div class="your_details">
+        <h1>What's your Name?</h1>
+        <p>This Name will be displayed as your profile Name.</p>
+        <ul>
+            <li><label><span>Your Name</span>
+                	<input type="text" [(ngModel)]="firstname" formControlName="firstname" placeholder="First Name" minlength="3"  (keypress)="keyPress($event,textpattern)"/>
+                    <div class='form-text error' *ngIf="userForm.controls.firstname.touched">
+                        <div *ngIf="userForm.controls.firstname.hasError('required')" style="position: absolute;top: 26.5%;">firstname is required.</div>
+                        <div *ngIf="userForm.controls.firstname.hasError('invalidtext')">allow characters</div>
+                        <div *ngIf="userForm.controls.firstname.hasError('minlength')">firstname isn't long enough.</div>
+                         <!--<div *ngIf="userForm.controls.firstname.hasError('maxlength')">firstname is too long.</div>-->
+                    </div> 
+                    <input type="text" [(ngModel)]="lastname"  formControlName="lastname" placeholder="Last Name" (keypress)="keyPress($event,textpattern)"/>
+                    <div class='form-text error' *ngIf="userForm.controls.lastname.touched">
+                        <div *ngIf="userForm.controls.lastname.hasError('required')" style="position:absolute; top:26.5%; left:19%;">lastname is required.</div>
+                        <div *ngIf="userForm.controls.lastname.hasError('invalidtext')">allow characters</div>
+                     </div>  
+                </label>
+            </li>
+            <li>
+                	<label ><span style="position: absolute;top: 35%;">Email</span>
+                      <input class="user" [(ngModel)]="email" type="email" placeholder="email" formControlName="email" (change) ="emailFocusOut(email)" style="margin:11.5% 0 0 0;" />
+                       <div class='form-text error' *ngIf="userForm.controls.email.touched">
+                            <div *ngIf="userForm.controls.email.hasError('required')">email is required.</div>
+                            <div *ngIf="userForm.controls.email.hasError('invalidemail')">email is invalid</div>
+                            <div *ngIf="spanEmailId">The Email Already Exists</div>
+                        </div> 
+                    </label>
+            </li>
+             <li>
+                <label><span style="position: absolute;top: 35%;">MobileNo</span>
+                      <input class="user" [(ngModel)]="mobileno" type="text" placeholder="mobileno" formControlName="mobileno" (keypress)="keyPress($event,mobilepattern)" style="margin:11.5% 0 0 0;"/>
+                       <div class='form-text error' *ngIf="userForm.controls.mobileno.touched">
+                            <div *ngIf="userForm.controls.mobileno.hasError('required')">mobileno is required.</div>
+                            <div *ngIf="userForm.controls.mobileno.hasError('invalidnumber')">allow numbers</div>
+                            <div *ngIf="userForm.controls.mobileno.hasError('maxlength')">mobileno should not exceed 10 digits.</div>
+                            <div *ngIf="userForm.controls.mobileno.hasError('minlength')">mobileno should be 10 digits.</div>
+                        </div>
+                </label> 
+             </li>
+             <li>
+                <label>
+                        <span>Password</span>
+                        <input class="user" pg-two [(ngModel)]="password" formControlName="password" type="password" placeholder="password" minlength='6'  (click)="toggleShow($event)"/>show
+                        <!--<a (click)="toggleShow($event)">show/hide</a>-->
+                        <div class='form-text error' *ngIf="userForm.controls.password.touched">
+                            <div *ngIf="userForm.controls.password.hasError('required')">Password is required.</div>
+                            <div *ngIf="userForm.controls.password.hasError('minlength')">Password isn't long enough.</div>
+                        </div>
+                </label>
+                <label><span>ConfirmPassword</span>
+                      <input class="user" [(ngModel)]="confirmPassword" type="password" placeholder="confirmPassword" formControlName="confirmPassword" />
+                      <div class='form-text error' *ngIf="userForm.controls.confirmPassword.touched">
+                        <div *ngIf="userForm.hasError('mismatchedPasswords')">Passwords do not match.</div>
+                    </div>
+                </label>
+            </li>
+        </ul>
+        <p><span>Username must be all lowercase. It should only contain letters and numbers.</span></p>
+        <a id="btnRedirect" [ngClass]="{disabled:(!userForm.valid||spanEmailId)}" routerLink="/three" class="fadeOut one_next" (click)="submit()">Next<i class="zmdi zmdi-long-arrow-right zmdi-hc-fw"></i></a>
+        {{!userForm.valid}}{{spanEmailId}}
+        <p><span>By proceeding to create your account and use Tiny360, you are agreeing to our Terms of Service and Privacy Policy. If you do not agree, you cannot use Tiny360.</span></p>
+    </div>
+    </form>
+</aside>
+
+<div class="one_right">
+    <div class="right_cont">
+        <img src="tmp/one.png" alt="" />
+        <p>Thank you for choosing Tiny360 to automate your business process. Just help us to provide some information to create account.</p><br>
+
+    </div>
+</div>
+
+<!--	one page end	-->
+
+<!-- Header -->
+<!-- Search modal -->
+<div class="modal fade in" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <form>
+                    <input type="text" class="form-control" placeholder="Type search term...">
+                    <button type="submit" class="btn">Go</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JS -->
+<script src="assets/js/jquery-1.11.3.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/js/jquery-ui.min.js"></script>
+<!--<script src="assets/js/select2.min.js"></script>
+	<script src="assets/js/parsley.min.js"></script>
+	<script src="assets/js/throttle-debounce.min.js"></script>
+	<script src="assets/js/jquery.shuffle.min.js"></script>
+	<script src="assets/js/autosize.min.js"></script>
+	<script src="assets/js/raphael-min.js"></script>
+	<script src="assets/js/morris.min.js"></script>
+	<script src="assets/js/Chart.min.js"></script>
+	<script src="assets/js/chartist.min.js"></script>
+	<script src="assets/js/jquery.fullscreen.min.js"></script>
+	<script src="assets/js/app.min.js"></script>-->
+
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        //	$(".your_details_edit ul#five_a").hide();
+        $(".your_details ul li input").click(function() {
+            $(".your_details a").addClass(".your_details .one_next");
+            //	$(".your_details a").addClass("fadeIn");
+            //    $(".your_details a").css("background-color", "#18be8c");
+            $(".your_details a").fadeIn(100);
+            //	$(".your_details a").show();
+        });
+
+    });
+</script>
+
+
+<div class="visible-xs visible-sm extendedChecker"></div>
+
+
+<!-- direct end -->

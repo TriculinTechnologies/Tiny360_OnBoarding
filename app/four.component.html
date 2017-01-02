@@ -1,0 +1,107 @@
+<div class="header">
+    <div class="row">
+        <div class="col-xs-6">
+            <div class="logo_one">
+                <img src="tmp/tiny_logo.jpg" style="width:131px; height:32px;" />
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <label style="margin: 5% 0 0 52%;float: left;font-family:Lato, sans-serif; font-weight:400;font-size:16px;">Language</label>
+            <select style="float: right;margin: 5% 9% 0 0; font-family:Lato, sans-serif; font-weight:400;">
+                <option *ngFor="let lang of language;" [value]="lang.value"> {{lang.name}} </option>              
+            </select>
+        </div>
+    </div>
+</div>
+<div class="border"></div>
+<div class="container-fluid">
+    <aside class="aside_one">
+        <div class="login">
+            <form [formGroup]="userForm">
+                <h4>Secure Login for Tiny360 Customer<br/> Portal </h4>
+                <span *ngIf="spanEmailPwd">Enter Valid Email OR Password</span>
+                <p class="email">Email Id </p>
+                <input type="email" placeholder="Email Id" [(ngModel)]="loginEmail" formControlName="loginEmail" style="width:68%;" />
+                <div class='form-text error' *ngIf="userForm.controls.loginEmail.touched">
+                    <div *ngIf="userForm.controls.loginEmail.hasError('required')">email is required.</div>
+                    <div *ngIf="userForm.controls.loginEmail.hasError('invalidemail')">email is invalid</div>
+                </div> 
+                <p class="password">Password </p>
+                <input type="Password" placeholder="Password" [(ngModel)]="loginPwd" formControlName="loginPwd" style="width:68%;" />
+                <div class='form-text error' *ngIf="userForm.controls.loginPwd.touched">
+                    <div *ngIf="userForm.controls.loginPwd.hasError('required')">Password is required.</div>
+                </div>
+                <a href="" style="display: block;">Contact Us </a>
+                <a href="" style="display: block;">Register</a>
+                <a href="" style="display: block;"> Forgot Password?</a>
+                <a href=""> Need Tiny360 Portal Help</a>
+                <input type="button" [ngClass]="{disabled:!userForm.valid}" value="login" (click)="login(loginEmail,loginPwd)" />
+            </form>
+        </div>
+    </aside>
+</div>
+<div class="pageWrap">
+    <div class="pageContent extended">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-8">
+                    <div class="content">
+                        <input type="button" value="Make Your Trading Easy with Tiny360" />
+                        <div class="content_one">
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <div class="content_two">
+                                        <img src="tmp/001.png" alt="shopmanage" />
+                                        <h4> Shop Management </h4>
+                                        <p>Be it a single shop or chain of shops or retail outlets, Tiny360 platform can do all necessray provising for you to maintain shops, Orders, staff and inventory. </p>
+                                        <a href=""> Learn More</a>
+                                    </div>
+                                </div>
+                                <div class="col-xs-4">
+                                    <div class="content_three">
+                                        <img src="tmp/006.png" alt="shopmanage" />
+                                        <h4> Inventory Management </h4>
+                                        <p> Inventory management and placement of <br> stocked goods across your shops will be <br/> much easier with tiny360 inventory management software. </p>
+                                        <a href=""> Learn More</a>
+                                    </div>
+                                </div>
+                                <div class="col-xs-4">
+                                    <div class="content_four">
+                                        <img src="tmp/003.png" alt="shopmanage" />
+                                        <h4> Services </h4>
+                                        <p> Tiny360 platform has an extensive product and service catalog to serve your customers. </p>
+                                        <a href=""> Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="contents_one">
+                                    <img src="tmp/004.png" alt="shopmanage" />
+                                    <h4> Payroll </h4>
+                                    <p>Manage your employees, sub-organizations and hiearchies there and their remunerations and bonues at one place. </p>
+                                    <a href=""> Learn More</a>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="contents_two">
+                                    <img src="tmp/005.png" alt="shopmanage" />
+                                    <h4> Order Management </h4>
+                                    <p> Automation and stream-lining of order processing for your business ensuring re-pricing based on promotions available. </p>
+                                    <a href=""> Learn More</a>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="contents_three">
+                                    <h4> Connect With Tiny360 </h4>
+                                    <img src="tmp/logo-facebook.png" alt="fb" /><a href=""><span class="socials"> Twitter</span></a>
+                                    <img class="socials_one" src="tmp/twitter-logo1.png" alt="fb" /><a href=""><span class="socials_two"> Facebook</span></a>
+                                    <img class="socials_three" src="tmp/Linkedin_circle.svg_.png" alt="fb" /><a href=""><span class="socials_four"> Linkedin</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
