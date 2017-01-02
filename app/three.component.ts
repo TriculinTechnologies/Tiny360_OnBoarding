@@ -34,7 +34,7 @@ export class ThreeComponent implements OnInit {
   mobilepattern:RegExp= /^[0-9.\s_-]+$/;
   dropdowmshowandhide:boolean=true;
   dropdowmshowandhide1:boolean=false;
-  testvalue:any;
+
 //   @HostListener('mouseover', ['$event.target'])
 //   onfocusout(btn:any):void {
 //       let length=this.ef.nativeElement.children[0].length;
@@ -49,9 +49,6 @@ export class ThreeComponent implements OnInit {
 
  for(let j=0;j<length;j++)
      {
-       //testing2
-
-       //testing3
        if (j!=4) {
        this.ef.nativeElement.children[0][j].disabled=true;
      }
@@ -169,11 +166,12 @@ readUrl(event:any) {
   if (event.target.files && event.target.files[0]) {
     var reader = new FileReader();
     let data=event.target.files[0];
-    // var data1= data.getAsBinary();
-//this.imageData = event.target.files;
+    var data1= data.getAsBinary();
+this.imageData = event.target.files;
     reader.onload = (e:any) => {
       this.imageData = e.target.result;
       localStorage.setItem("theImage",reader.result);
+
       // localStorage.setItem("theImage",JSON.stringify(reader.result));
       //localStorage.theImage = reader.result;
     }

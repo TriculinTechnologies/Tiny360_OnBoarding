@@ -29,7 +29,7 @@ export function urlValidator(control:FormControl): {[key:string]: any} {
   }
 }
 export function addressValidator(control:FormControl): {[key:string]: any} {
-  var addressVal=/^[a-zA-Z0-9.():,#._;@-\s]*$/;
+  var addressVal=/^[a-zA-Z0-9.():,'/&#._;@-\s]*$/;
   if (control.value && !addressVal.test(control.value)) {
   return { invalidaddress: true };
   }
