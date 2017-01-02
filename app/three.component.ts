@@ -34,6 +34,7 @@ export class ThreeComponent implements OnInit {
   mobilepattern:RegExp= /^[0-9.\s_-]+$/;
   dropdowmshowandhide:boolean=true;
   dropdowmshowandhide1:boolean=false;
+  testvalue:any;
 //   @HostListener('mouseover', ['$event.target'])
 //   onfocusout(btn:any):void {
 //       let length=this.ef.nativeElement.children[0].length;
@@ -48,6 +49,9 @@ export class ThreeComponent implements OnInit {
 
  for(let j=0;j<length;j++)
      {
+       //testing2
+
+       //testing3
        if (j!=4) {
        this.ef.nativeElement.children[0][j].disabled=true;
      }
