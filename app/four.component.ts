@@ -60,7 +60,7 @@ export class FourComponent implements OnInit {
       }else{
         console.log("Valid Email & Pwd");
         this.spanEmailPwd = false;
-        //test change
+        
       }
        });
     }
