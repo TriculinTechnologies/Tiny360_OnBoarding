@@ -48,7 +48,7 @@ export class FourComponent implements OnInit {
         console.log("Please Enter Valid Email OR Password", value);
         this.loginStatus = false;
       }else{
-        console.log("Login Sucess", value);
+        console.log("Login Success", value);
         this.loginStatus = true;
       }
     }, err => {

@@ -76,7 +76,7 @@ export class ThreeComponent implements OnInit {
       firstName: ['', Validators.compose([Validators.required, textValidator])],
       lastName: ['', Validators.compose([Validators.required, textValidator])],
       emailId: ['', Validators.compose([Validators.required, emailValidator])],
-      mobileNo: ['', Validators.compose([Validators.required, numberValidator])],
+      mobileNo: ['', Validators.compose([Validators.required, numberValidator,Validators.maxLength(10),Validators.minLength(10)])],
       businessName: ['', Validators.compose([Validators.required, textValidator])],
       typeOfBusiness:['', Validators.compose([Validators.required, textValidator])],
       website: ['', Validators.compose([urlValidator])],
@@ -160,6 +160,9 @@ dropdownshowandhide(){
     });
       // .subscribe((registeredUsers:any) => this.registeredUsers=this.httpService.registeredUsersDetails());s
   }
+  getSuccess(){
+    this.router.navigate(['/four']);
+}
   imageData:any;
   url:any;
 readUrl(event:any) {
