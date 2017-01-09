@@ -10,16 +10,16 @@
 
                 <li>
                     <label><span>Business Name</span> </label>
-                    <input [(ngModel)]="businessname" formControlName="businessname" style="margin:0; width:100%;" (keypress)="keyPress($event,textpattern)" type="text" placeholder="businessname" />
+                    <input [(ngModel)]="businessname" formControlName="businessname" style="margin:0; width:100%;" (keypress)="keyPress($event,textpattern)" type="text" />
                     <div class='form-text error' *ngIf="userForm.controls.businessname.touched">
-                        <div *ngIf="userForm.controls.businessname.hasError('required')">businessname is required.</div>
-                        <div *ngIf="userForm.controls.businessname.hasError('invalidtext')">allow characters</div>
+                        <div *ngIf="userForm.controls.businessname.hasError('required')">This field is required.</div>
+                        <div *ngIf="userForm.controls.businessname.hasError('invalidtext')">Allow characters</div>
                     </div>
                 </li>
 
                 <li>
                     <label for="classic-select">Type of Business</label>
-                    <select [(ngModel)]="typeOfBusiness" formControlName="typeOfBusiness" placeholder="selectone" required>
+                    <select style="width: 100%;height: 30px;" [(ngModel)]="typeOfBusiness" formControlName="typeOfBusiness" placeholder="selectone" required>
                                  <option>Dry Cleaning </option>
                                  <option>Laundry</option>
                                  <option>Clothing Alteration</option>
@@ -27,13 +27,13 @@
                                  <option>Embroidery</option>                             
                             </select>
                     <div class='form-text error' *ngIf="userForm.controls.typeOfBusiness.touched">
-                        <div *ngIf="userForm.controls.typeOfBusiness.hasError('required')">typeOfBusiness is required.</div>
+                        <div *ngIf="userForm.controls.typeOfBusiness.hasError('required')">This field is required.</div>
                     </div>
                 </li>
                 <li><label><span>Website</span></label>
-                    <input style="margin:0; width:100%;" type="text" [(ngModel)]="websitename" formControlName="websitename" placeholder="" />
+                    <input style="margin:0; width:100%;" type="text" [(ngModel)]="websitename" formControlName="websitename" placeholder="www.example.com" />
                     <div class='form-text error' *ngIf="userForm.controls.websitename.touched">
-                        <div *ngIf="userForm.controls.websitename.hasError('invalidurl')">Give valid url like www.google.com</div>
+                        <div *ngIf="userForm.controls.websitename.hasError('invalidurl')">Give valid url ( www.example.com )</div>
                     </div>
                 </li>
                 <li>

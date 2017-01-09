@@ -1,28 +1,36 @@
 h1 {
-  color: #369;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 250%;
+    color: #369;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 250%;
 }
-.disabled 
-{
+
+.disabled {
     cursor: not-allowed;
     pointer-events: none;
 }
 
 .error {
-  color:red;
+    color: red;
+    font-size: 13px;
+    /*margin-bottom: 5px;*/
 }
 
-input.ng-touched.ng-invalid{ 
-    border:1px solid red; 
-  }
-  .select {
+input.ng-touched.ng-invalid {
+    border: 1px solid red !important;
+}
+
+.select {
     font-family: 'Lato', sans-serif;
     font-size: 15px;
-     color: #369;
+    color: #369;
     font-weight: 600;
     /*display: block;
     border-bottom: 1px solid #D6D6D6;
     cursor: default;*/
     /*margin: 0;*/
+}
+
+.erreye {
+    display: -webkit-inline-box;
+    margin: 0 0 0 -9%;
 }

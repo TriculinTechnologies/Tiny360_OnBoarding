@@ -23,7 +23,7 @@ export function numberValidator(control:FormControl): {[key:string]: any} {
   }
 }
 export function urlValidator(control:FormControl): {[key:string]: any} {
-  var urlVal=/^(http(s?):\/\/)?(www\.)+[a-zA-Z0-9\.\-\_]+(\.[a-zA-Z]{2,3})+(\/[a-zA-Z0-9\_\-\s\.\/\?\%\#\&\=]*)?$/;
+  var urlVal=/^(http(s?):\/\/)?(www\.)+[a-zA-Z0-9\.\-\_]+(\.[a-zA-Z]{2,4})+(\/[a-zA-Z0-9\_\-\s\.\/\?\%\#\&\=]*)?$/;
   if (control.value && !urlVal.test(control.value)) {
   return { invalidurl: true };
   }

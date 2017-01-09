@@ -42,8 +42,8 @@ export class OneComponent  {
   if (event.target.files && event.target.files[0]) {
     var reader = new FileReader();
     let data=event.target.files[0];
-    var data1= data.getAsBinary();
-this.imageData = event.target.files;
+    // var data1= data.getAsBinary();
+    // this.imageData = event.target.files;
     reader.onload = (e:any) => {
       this.url = e.target.result;
       localStorage.setItem("theImage",reader.result);      
