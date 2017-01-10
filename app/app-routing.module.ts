@@ -10,11 +10,12 @@ const routes: Routes = [
   { path: 'one', component: OneComponent },
   { path: 'two', component: TwoComponent },
   { path: 'three', component: ThreeComponent },
-  { path: 'four', component: FourComponent }
+  { path: 'four', component: FourComponent },
+  { path: 'four/:url', component: FourComponent }
 ];
 
 @NgModule({
-  imports: [ RouterModule.forRoot(routes) ],
+  imports: [ RouterModule.forRoot(routes)],
   exports: [ RouterModule ]
 })
 export class AppRoutingModule {}

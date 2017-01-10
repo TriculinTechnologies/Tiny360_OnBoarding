@@ -34,6 +34,7 @@ export class ThreeComponent implements OnInit {
   mobilepattern:RegExp= /^[0-9.\s_-]+$/;
   dropdowmshowandhide:boolean=true;
   dropdowmshowandhide1:boolean=false;
+
 //   @HostListener('mouseover', ['$event.target'])
 //   onfocusout(btn:any):void {
 //       let length=this.ef.nativeElement.children[0].length;
@@ -55,7 +56,7 @@ export class ThreeComponent implements OnInit {
      }
     this.data.push(JSON.parse(localStorage.getItem('onecmpvalues')));
     this.data.push(JSON.parse(localStorage.getItem('twocmpvalues')));
-      if (localStorage.getItem('onecmpvalues') && localStorage.getItem('twocmpvalues')) {       
+    if (localStorage.getItem('onecmpvalues') && localStorage.getItem('twocmpvalues')) {       
     this.firstName = this.data[1].firstname;
     this.lastName = this.data[1].lastname;
     this.emailId = this.data[1].email;
@@ -65,8 +66,7 @@ export class ThreeComponent implements OnInit {
     this.typeOfBusiness = this.data[0].typeOfBusiness;
     this.website = this.data[0].websitename;
     this.businessAddress = this.data[0].businessAddress;
-      this.imageData=localStorage.getItem('theImage');
-      
+    this.imageData=localStorage.getItem('theImage');      
   }
  }
   constructor(public fb: FormBuilder,public httpService: HttpService,public ef:ElementRef,public router: Router) {
@@ -75,19 +75,16 @@ export class ThreeComponent implements OnInit {
       firstName: ['', Validators.compose([Validators.required, textValidator])],
       lastName: ['', Validators.compose([Validators.required, textValidator])],
       emailId: ['', Validators.compose([Validators.required, emailValidator])],
-      mobileNo: ['', Validators.compose([Validators.required, numberValidator])],
+      mobileNo: ['', Validators.compose([Validators.required, numberValidator,Validators.maxLength(10),Validators.minLength(10)])],
       businessName: ['', Validators.compose([Validators.required, textValidator])],
       typeOfBusiness:['', Validators.compose([Validators.required, textValidator])],
       website: ['', Validators.compose([urlValidator])],
       businessAddress:['', Validators.compose([ addressValidator])]    
     })
-
   }
  
 dropdownshowandhide(){
   this.dropdowmshowandhide=!this.dropdowmshowandhide;
-
-
 }
     edit(i:number){
       let length=this.ef.nativeElement.children[0].length;
@@ -105,17 +102,17 @@ dropdownshowandhide(){
      clickedOutside(){
         console.log("clicked outside");
         this.dropdowmshowandhide = true;
-         this.ef.nativeElement.children[0][6].autofocus=false;
-  this.ef.nativeElement.children[0][6].disabled=true;
+        this.ef.nativeElement.children[0][6].autofocus=false;
+        this.ef.nativeElement.children[0][6].disabled=true;
        
         //$event.stopPropagation();
     }
       myfun(){
-  this.ef.nativeElement.children[0][6].autofocus=false;
-  this.ef.nativeElement.children[0][6].disabled=false;
+        this.ef.nativeElement.children[0][6].autofocus=false;
+        this.ef.nativeElement.children[0][6].disabled=false;
       }
  keyPress(event: any,pat:any) {
-    const pattern =pat;
+  const pattern =pat;
    let inputChar = String.fromCharCode(event.charCode);
    // console.log(inputChar, e.charCode);
    if (!pattern.test(inputChar)) {
@@ -159,26 +156,27 @@ dropdownshowandhide(){
     });
       // .subscribe((registeredUsers:any) => this.registeredUsers=this.httpService.registeredUsersDetails());s
   }
+  getSuccess(){
+    this.router.navigate(['/four']);
+}
   imageData:any;
   url:any;
-readUrl(event:any) {
+  readUrl(event:any) {
   if (event.target.files && event.target.files[0]) {
     var reader = new FileReader();
     let data=event.target.files[0];
     // var data1= data.getAsBinary();
-//this.imageData = event.target.files;
+    // this.imageData = event.target.files;
     reader.onload = (e:any) => {
-      this.imageData = e.target.result;
-      localStorage.setItem("theImage",reader.result);
+    this.imageData = e.target.result;
+    localStorage.setItem("theImage",reader.result);
+
       // localStorage.setItem("theImage",JSON.stringify(reader.result));
       //localStorage.theImage = reader.result;
     }
-
     reader.readAsDataURL(event.target.files[0]);
-    
   }
 }
-
 }
 
 

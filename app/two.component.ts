@@ -1,8 +1,7 @@
-import { Component, ViewChild, ElementRef, HostListener } from '@angular/core';
+import { Component, ViewChild,  HostListener } from '@angular/core';
 import { FormBuilder, Validators, FormControl } from '@angular/forms';
 import { emailValidator, matchingPasswords, textValidator, numberValidator } from './validator';
 import { HttpService } from './http-service';
-import { ShowHideInput } from './show-hide-input';
 
 @Component({
   moduleId: module.id,
@@ -11,21 +10,21 @@ import { ShowHideInput } from './show-hide-input';
   templateUrl: 'two.component.html',
   // directives: [ShowHideInput]
 })
-export class TwoComponent {
-  @ViewChild(ShowHideInput) input: ShowHideInput;
+export class TwoComponent { 
   firstname: string = "";
   lastname: string = "";
   email: string = "";
   mobileno: string = "";
   password: string = "";
   confirmPassword: string = "";
-  textpattern: RegExp = /^[A-Z,a-z]+$/;
+  // textpattern: RegExp = /^[A-Z,a-z]+$/;
+  textpattern :RegExp=/^[A-Z,a-z.\s]+$/;
   mobilepattern: RegExp = /^[0-9.\s_-]+$/;
-  show = false;
+  // show:boolean= false;
   spanEmailId: boolean = false;
   public emailIdStatus = false;
   userForm: any
-  constructor(public fb: FormBuilder, public ef: ElementRef, public httpService: HttpService) {
+  constructor(public fb: FormBuilder, public httpService: HttpService) {
     this.userForm = fb.group({
       firstname: ['', Validators.compose([Validators.required, textValidator])],
       lastname: ['', Validators.compose([Validators.required, textValidator])],
@@ -39,11 +38,11 @@ export class TwoComponent {
   submit() {
     localStorage.setItem("twocmpvalues", JSON.stringify(this.userForm.value));
   }
-  @HostListener('focusout', ['$event.target'])
-  onFocusout(target: any) {
-    console.log("Focus out called");
-    target.type = 'text';
-  }
+  // @HostListener('focusout', ['$event.target'])
+  // onFocusout(target: any) {
+  //   console.log("Focus out called");
+  //   target.type = 'text';
+  // }
   keyPress(event: any, pat: any) {
     const pattern = pat;
     let inputChar = String.fromCharCode(event.charCode);
@@ -53,17 +52,23 @@ export class TwoComponent {
       event.preventDefault();
     }
   }
-
-  toggleShow() {
-    this.show = !this.show;
-    console.log(this.input); //undefined
-    if (this.show) {
-      this.ef.nativeElement.children[0].children[1][4].type = "text";
-    }
-    else {
-      this.ef.nativeElement.children[0].children[1][4].type = "password";
-    }
+  onPaste(e:any){
+    let content=e.clipboardData.getData('text/plain');
+    //this.confirmPassword = "";
+      setTimeout(() => {
+      this.confirmPassword = "";
+    }, 0);
   }
+  // toggleShow() {
+  //   this.show = !this.show;
+  //   console.log(this.input); //undefined
+  //   if (this.show) {
+  //     this.ef.nativeElement.children[0].children[1][4].type = "text";      
+  //   }
+  //   else {
+  //     this.ef.nativeElement.children[0].children[1][4].type = "password";
+  //   }
+  // }
   emailFocusOut(emailId: any) {
     if (this.userForm.controls.email.valid) {
       let emailUrl: any = "http://192.168.2.131:8082/CustomerValid?Emailid=" + emailId;

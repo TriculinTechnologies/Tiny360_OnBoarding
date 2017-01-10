@@ -3,7 +3,7 @@ import {  HttpService } from './http-service';
 // SINGLE FIELD VALIDATORS
 export function emailValidator(control: FormControl): {[key: string]: any} {
   var httpService:HttpService;
-  var email = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  var email = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,4}))$/;
   if (control.value && !email.test(control.value)) {
     return { invalidemail: true };
   }
@@ -23,13 +23,13 @@ export function numberValidator(control:FormControl): {[key:string]: any} {
   }
 }
 export function urlValidator(control:FormControl): {[key:string]: any} {
-  var urlVal=/^(http(s?):\/\/)?(www\.)+[a-zA-Z0-9\.\-\_]+(\.[a-zA-Z]{2,3})+(\/[a-zA-Z0-9\_\-\s\.\/\?\%\#\&\=]*)?$/;
+  var urlVal=/^(http(s?):\/\/)?(www\.)+[a-zA-Z0-9\.\-\_]+(\.[a-zA-Z]{2,4})+(\/[a-zA-Z0-9\_\-\s\.\/\?\%\#\&\=]*)?$/;
   if (control.value && !urlVal.test(control.value)) {
   return { invalidurl: true };
   }
 }
 export function addressValidator(control:FormControl): {[key:string]: any} {
-  var addressVal=/^[a-zA-Z0-9.():,#._;@-\s]*$/;
+  var addressVal=/^[a-zA-Z0-9.():,'/&#._;@-\s]*$/;
   if (control.value && !addressVal.test(control.value)) {
   return { invalidaddress: true };
   }

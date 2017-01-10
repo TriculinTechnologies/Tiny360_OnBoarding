@@ -9,10 +9,10 @@ import { emailValidator, matchingPasswords ,textValidator,numberValidator,urlVal
 })
 export class OneComponent  { 
  textpattern :RegExp=/^[A-Z,a-z._@./#&+-.\s]+$/;
-mobilepattern:RegExp= /^[0-9.\s_-]+$/;
-imageData:any;
-url:any;
-// mobilepattern:RegExp= /^[0-9]{1,6}+-[0-9]{1,6}+$/;
+ mobilepattern:RegExp= /^[0-9.\s_-]+$/;
+ imageData:any;
+ url:any;
+ // mobilepattern:RegExp= /^[0-9]{1,6}+-[0-9]{1,6}+$/;
   userForm:any
   constructor(public fb: FormBuilder){
     
@@ -43,15 +43,12 @@ url:any;
     var reader = new FileReader();
     let data=event.target.files[0];
     // var data1= data.getAsBinary();
-//this.imageData = event.target.files;
+    // this.imageData = event.target.files;
     reader.onload = (e:any) => {
       this.url = e.target.result;
-      localStorage.setItem("theImage",reader.result);
-      
+      localStorage.setItem("theImage",reader.result);      
     }
-
-    reader.readAsDataURL(event.target.files[0]);
-    
+    reader.readAsDataURL(event.target.files[0]);    
   }
 }
 }

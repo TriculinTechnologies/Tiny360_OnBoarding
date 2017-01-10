@@ -1,69 +1,94 @@
 <form [formGroup]="userForm">
-<aside>
+    <aside>
 
-    <div class="logo">
-        <a href="#"><img src="tmp/tiny_logo.jpg" /></a>
-    </div>
-       
-    <div class="your_details">
-        <h1>Review your details</h1>
-        <p><small>Please review all the details, these may not be changed after your account has been created.</small></p>
-        <img src="tmp/icon/wel.jpg" />
-        <p>You are just a click away to automate your business.</p>
-        <a  class="five_next"  [ngClass]="{disabled:!userForm.valid}" (click)="submit(firstName,lastName,emailId,mobileNo,password,businessName,typeOfBusiness,website,businessAddress,imageData)">
-            <span class="hvr-wobble-horizontal" >Create my Tiny360</span></a>
-    </div>
-</aside>
+        <div class="logo">
+            <a href="#"><img src="tmp/tiny_logo.jpg" /></a>
+        </div>
 
-<div class="five_b_right">
-    <ul id="five_a" class="five_side" style="float:left;">
-        <li>
-            <label><span>First Name</span>
+        <div class="your_details">
+            <h1>Review your details</h1>
+            <p><small>Please review all the details, these may not be changed after your account has been created.</small></p>
+            <img src="tmp/icon/wel.jpg" />
+            <p>You are just a click away to automate your business.</p>
+            <a class="five_next" style="margin-left:0px" [ngClass]="{disabled:!userForm.valid}" (click)="submit(firstName,lastName,emailId,mobileNo,password,businessName,typeOfBusiness,website,businessAddress,imageData);getSuccess();">
+                <span class="hvr-wobble-horizontal">Create my Tiny360</span></a>
+        </div>
+    </aside>
+
+    <div class="five_b_right">
+        <ul id="five_a" class="five_side" style="float:left;">
+            <li>
+                <label><span>First Name</span>
                         <span *ngIf="false">{{firstName}}</span>
-                    	<input #input1 class="" style="" type="text"  placeholder="" [(ngModel)]="firstName"  formControlName="firstName" (keypress)="keyPress($event,textpattern)"/>
+                    	<input #input1 class="" style="" type="text"  placeholder="" [(ngModel)]="firstName" minlength="3" formControlName="firstName" (keypress)="keyPress($event,textpattern)"/>
+                        
                         <a class="edit" (click)="edit(0)">Edit</a>
+                        <div class='form-text error' *ngIf="userForm.controls.firstName.touched">
+                        <div *ngIf="userForm.controls.firstName.hasError('required')">firstname is required.</div>
+                        <div *ngIf="userForm.controls.firstName.hasError('invalidtext')">allow characters</div>
+                        <div *ngIf="userForm.controls.firstName.hasError('minlength')">firstname isn't long enough.</div>
+                        </div>
             </label>
-        </li>
-        <li>
-            <label><span>Last Name</span>
+            </li>
+            <li>
+                <label><span>Last Name</span>
                     	<input class="" style="" type="text" placeholder="" [(ngModel)]="lastName"  formControlName="lastName" (keypress)="keyPress($event,textpattern)"/>
                         <a class="edit" (click)="edit(1)">Edit</a>
+                        <div class='form-text error' *ngIf="userForm.controls.lastName.touched">
+                        <div *ngIf="userForm.controls.lastName.hasError('required')">lastname is required.</div>
+                        <div *ngIf="userForm.controls.lastName.hasError('invalidtext')">allow characters</div>
+                        </div>
             </label>
-        </li>
-        <li>
-            <label><span>Email Id</span>
+            </li>
+            <li>
+                <label><span>Email Id</span>
                     	<input class="" style="" type="text" placeholder="" [(ngModel)]="emailId"  formControlName="emailId"/>
                         <a class="edit" (click)="edit(2)">Edit</a>
+                        <div class='form-text error' *ngIf="userForm.controls.emailId.touched">
+                            <div *ngIf="userForm.controls.emailId.hasError('required')">email is required.</div>
+                            <div *ngIf="userForm.controls.emailId.hasError('invalidemail')">email is invalid</div>
+                        </div>
             </label>
-        </li>
-        <li>
-            <label><span>Mobile Number</span>
-                    	<input class="" style="" type="text" placeholder="" [(ngModel)]="mobileNo" (keypress)="keyPress($event,mobilepattern)" formControlName="mobileNo"/>
+            </li>
+            <li>
+                <label>
+                <span>Mobile Number</span>
+                    	<input class="" style="" type="text" placeholder="" [(ngModel)]="mobileNo" minlength="10" maxlength="10" (keypress)="keyPress($event,mobilepattern)" formControlName="mobileNo"/>
                         <a class="edit" (click)="edit(3)">Edit</a>
-                    </label>
-        </li>
-        <li>
-            <div class="photo_edit">
-                <img id="image" [src]="imageData" />
-                <div class="photo_change">Image Change</div>
-            </div>
-            <input type="file" name="pic" accept="image/*" (change)="readUrl($event)" style=" float:left; font-size:14px; margin:10px 20px; width:100px;">
-            <div style="clear:both;"></div>
+                        <div class='form-text error' *ngIf="userForm.controls.mobileNo.touched">
+                            <div *ngIf="userForm.controls.mobileNo.hasError('required')">mobileno is required.</div>
+                            <div *ngIf="userForm.controls.mobileNo.hasError('invalidnumber')">allow numbers</div>
+                            <div *ngIf="userForm.controls.mobileNo.hasError('maxlength')">mobileno should not exceed 10 digits.</div>
+                            <div *ngIf="userForm.controls.mobileNo.hasError('minlength')">mobileno should be 10 digits.</div>
+                        </div>
+                </label>
+            </li>
+            <li>
+                <div class="photo_edit">
+                    <img id="image" [src]="imageData" />
+                    <div class="photo_change">Image Change</div>
+                </div>
+                <input type="file" name="pic" accept="image/*" (change)="readUrl($event)" style=" float:left; font-size:14px; margin:10px 20px; width:100px;">
+                <div style="clear:both;"></div>
 
-        </li>
-        {{data | json}}
+            </li>
+            {{data | json}}
 
-    </ul>
+        </ul>
 
-    <ul id="five_b" class="five_side" style=" float:right;">
-        <li>
-            <label><span>Business Name</span>
+        <ul id="five_b" class="five_side" style=" float:right;">
+            <li>
+                <label><span>Business Name</span>
                     	<input class="" type="text" placeholder="" [(ngModel)]="businessName"  formControlName="businessName" (keypress)="keyPress($event,textpattern)" />
                         <a class="edit" (click)="edit(5)">Edit</a>
+                        <div class='form-text error' *ngIf="userForm.controls.businessName.touched">
+                        <div *ngIf="userForm.controls.businessName.hasError('required')">businessname is required.</div>
+                        <div *ngIf="userForm.controls.businessName.hasError('invalidtext')">allow characters</div>
+                    </div>
             </label>
-        </li>
-        <li>
-            <label [offClick]="clickedOutside"><span>Type Of Business</span>
+            </li>
+            <li>
+                <label [offClick]="clickedOutside"><span>Type Of Business</span>
                 <input *ngIf="dropdowmshowandhide" type="text" placeholder="" [(ngModel)]="typeOfBusiness"  formControlName="typeOfBusiness" readonly/>
                 <select *ngIf="!dropdowmshowandhide" [(ngModel)]="typeOfBusiness" class="select" formControlName="typeOfBusiness" placeholder="selectone">
                     <option>Dry Cleaning </option>
@@ -73,10 +98,13 @@
                     <option>Embroidery</option>                             
                 </select>
                  <a class="edit"  (click)="edit(6);dropdownshowandhide()">Edit</a>
+                 <div class='form-text error' *ngIf="userForm.controls.typeOfBusiness.touched">
+                        <div *ngIf="userForm.controls.typeOfBusiness.hasError('required')">typeOfBusiness is required.</div>
+                    </div>
             </label>
-        </li>
-       
-        <!--<li *ngIf="dropdowmshowandhide">
+            </li>
+
+            <!--<li *ngIf="dropdowmshowandhide">
             <label><span>Type Of Business</span>
                     	<input class="" style=""  type="text" placeholder="" [(ngModel)]="typeOfBusiness"  formControlName="typeOfBusiness"/>
                         <a class="edit"  (click)="edit(6);dropdownshowandhide()">Edit</a>
@@ -94,22 +122,28 @@
                         <a class="edit"  (click)="edit(6);dropdownshowandhide()">Edit</a>
             </label>
         </li>-->
-        <li>
-            <label><span>Website</span>
+            <li>
+                <label><span>Website</span>
                     	<input class="" style="" type="text" placeholder="" [(ngModel)]="website"  formControlName="website"/>
                         <a class="edit" (click)="edit(7)">Edit</a>
-            </label>
-        </li>
-        <li>
-            <label><span>Business Address</span>
+                        <div class='form-text error' *ngIf="userForm.controls.website.touched">
+                        <div *ngIf="userForm.controls.website.hasError('invalidurl')">Give valid url like www.google.com</div>
+                    </div>
+                </label>
+            </li>
+            <li>
+                <label><span>Business Address</span>
                     	<input class="" style="" type="text" placeholder="" [(ngModel)]="businessAddress"   formControlName="businessAddress"/>
                         <a class="edit" (click)="edit(8)">Edit</a>
-            </label>
-        </li>
-    </ul>
+                        <div class='form-text error' *ngIf="userForm.controls.businessAddress.touched">
+                        <div *ngIf="userForm.controls.businessAddress.hasError('invalidaddress')">invalid address</div>
+                    </div>
+                </label>
+            </li>
+        </ul>
 
     </div>
-    </form>
+</form>
 
 
 <!-- JS -->
