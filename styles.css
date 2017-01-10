@@ -12,6 +12,7 @@ h1 {
 .error {
     color: red;
     font-size: 13px;
+    font-weight: normal;
     /*margin-bottom: 5px;*/
 }
 

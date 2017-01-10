@@ -10,13 +10,13 @@
                 <li><label><span>Your Name</span>
                 	<input type="text" [(ngModel)]="firstname" formControlName="firstname" placeholder="First Name" minlength="3"  (keypress)="keyPress($event,textpattern)"/>
                     <div class='form-text error' *ngIf="userForm.controls.firstname.touched">
-                        <div *ngIf="userForm.controls.firstname.hasError('required')" style="position:absolute; top:26.5%;">firstname is required.</div>
+                        <div *ngIf="userForm.controls.firstname.hasError('required')" style="position:absolute; top:26.5%;">Firstname is required.</div>
                         <div *ngIf="userForm.controls.firstname.hasError('invalidtext')">Allow characters</div>
-                        <div *ngIf="userForm.controls.firstname.hasError('minlength')" style="position: absolute; top:26.5%;">firstname isn't long enough.</div>
+                        <div *ngIf="userForm.controls.firstname.hasError('minlength')" style="position: absolute; top:26.5%;">Firstname isn't long enough.</div>
                     </div> 
                     <input type="text" [(ngModel)]="lastname"  formControlName="lastname" placeholder="Last Name" (keypress)="keyPress($event,textpattern)"/>
                     <div class='form-text error' *ngIf="userForm.controls.lastname.touched">
-                        <div *ngIf="userForm.controls.lastname.hasError('required')" style="position:absolute; top:26.5%; left:250px;">lastname is required.</div>
+                        <div *ngIf="userForm.controls.lastname.hasError('required')" style="position:absolute; top:26.5%; left:250px;">Lastname is required.</div>
                         <div *ngIf="userForm.controls.lastname.hasError('invalidtext')">Allow characters</div>
                     </div>  
                 </label>
@@ -36,9 +36,9 @@
                       <input class="user" [(ngModel)]="mobileno" type="text" minlength="10" maxlength="10"  formControlName="mobileno" (keypress)="keyPress($event,mobilepattern)" />
                        <div class='form-text error' *ngIf="userForm.controls.mobileno.touched">
                             <div *ngIf="userForm.controls.mobileno.hasError('required')">Mobile No is required.</div>
-                            <div *ngIf="userForm.controls.mobileno.hasError('invalidnumber')">allow numbers</div>
-                            <div *ngIf="userForm.controls.mobileno.hasError('maxlength')">mobileno should not exceed 10 digits.</div>
-                            <div *ngIf="userForm.controls.mobileno.hasError('minlength')">mobileno should be 10 digits.</div>
+                            <div *ngIf="userForm.controls.mobileno.hasError('invalidnumber')">Allow numbers</div>
+                            <div *ngIf="userForm.controls.mobileno.hasError('maxlength')">Mobile No should not exceed 10 digits.</div>
+                            <div *ngIf="userForm.controls.mobileno.hasError('minlength')">Mobile No should be 10 digits.</div>
                        </div>
                 </label>
                 </li>

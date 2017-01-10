@@ -23,8 +23,8 @@
                 <p class="email">Email Id </p>
                 <input type="email" placeholder="Email Id" [(ngModel)]="loginEmail" formControlName="loginEmail" style="width:68%;" />
                 <div class='form-text error' *ngIf="userForm.controls.loginEmail.touched">
-                    <div *ngIf="userForm.controls.loginEmail.hasError('required')">email is required.</div>
-                    <div *ngIf="userForm.controls.loginEmail.hasError('invalidemail')">email is invalid</div>
+                    <div *ngIf="userForm.controls.loginEmail.hasError('required')">Email is required.</div>
+                    <div *ngIf="userForm.controls.loginEmail.hasError('invalidemail')">Email is invalid</div>
                 </div>
                 <p class="password">Password </p>
                 <input type="Password" placeholder="Password" [(ngModel)]="loginPwd" formControlName="loginPwd" style="width:68%;" />
