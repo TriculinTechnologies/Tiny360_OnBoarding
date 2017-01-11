@@ -10,7 +10,7 @@ export class HttpService {
     //usersUrl:string='';
     //usersUrl:string='http://localhost:8080/registeredUsers';
     //http://192.168.2.131:8082/CustomerValid?Emailid=teja@gmail.com
-    usersUrl:string='http://192.168.2.131:8082/Customer/Register';
+    usersUrl:string='http://192.168.2.131:8081/Customer/Register';
     private headers = new Headers({'Content-Type': 'application/json'});
 
 

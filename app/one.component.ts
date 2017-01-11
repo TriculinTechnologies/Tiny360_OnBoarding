@@ -49,8 +49,7 @@ url:any;
       localStorage.setItem("theImage",reader.result);
       
     }
-
-    reader.readAsDataURL(event.target.files[0]);
+  reader.readAsDataURL(event.target.files[0]);
     
   }
 }

@@ -3,69 +3,67 @@
         <a href="#"><img src="tmp/tiny_logo.jpg" /></a>
     </div>
     <form [formGroup]="userForm">
-    <div class="your_details">
-        <h1>What's your Name?</h1>
-        <p>This Name will be displayed as your profile Name.</p>
-        <ul>
-            <li><label><span>Your Name</span>
+        <div class="your_details">
+            <h1>What's your Name?</h1>
+            <p>This Name will be displayed as your profile Name.</p>
+            <ul>
+                <li><label><span>Your Name</span>
                 	<input type="text" [(ngModel)]="firstname" formControlName="firstname" placeholder="First Name" minlength="3"  (keypress)="keyPress($event,textpattern)"/>
                     <div class='form-text error' *ngIf="userForm.controls.firstname.touched">
-                        <div *ngIf="userForm.controls.firstname.hasError('required')" style="position: absolute;top: 26.5%;">firstname is required.</div>
-                        <div *ngIf="userForm.controls.firstname.hasError('invalidtext')">allow characters</div>
-                        <div *ngIf="userForm.controls.firstname.hasError('minlength')">firstname isn't long enough.</div>
-                         <!--<div *ngIf="userForm.controls.firstname.hasError('maxlength')">firstname is too long.</div>-->
+                        <div *ngIf="userForm.controls.firstname.hasError('required')" style="position:absolute; top:26.5%;">Firstname is required.</div>
+                        <div *ngIf="userForm.controls.firstname.hasError('invalidtext')">Allow characters</div>
+                        <div *ngIf="userForm.controls.firstname.hasError('minlength')" style="position: absolute; top:26.5%;">Firstname isn't long enough.</div>
                     </div> 
                     <input type="text" [(ngModel)]="lastname"  formControlName="lastname" placeholder="Last Name" (keypress)="keyPress($event,textpattern)"/>
                     <div class='form-text error' *ngIf="userForm.controls.lastname.touched">
-                        <div *ngIf="userForm.controls.lastname.hasError('required')" style="position:absolute; top:26.5%; left:19%;">lastname is required.</div>
-                        <div *ngIf="userForm.controls.lastname.hasError('invalidtext')">allow characters</div>
-                     </div>  
+                        <div *ngIf="userForm.controls.lastname.hasError('required')" style="position:absolute; top:26.5%; left:250px;">Lastname is required.</div>
+                        <div *ngIf="userForm.controls.lastname.hasError('invalidtext')">Allow characters</div>
+                    </div>  
                 </label>
-            </li>
-            <li>
-                	<label ><span style="position: absolute;top: 35%;">Email</span>
-                      <input class="user" [(ngModel)]="email" type="email" placeholder="email" formControlName="email" (change) ="emailFocusOut(email)" style="margin:11.5% 0 0 0;" />
+                </li>
+                <li>
+                    <label><span style="position: absolute;top: 29%;">Email</span>
+                      <input class="user" [(ngModel)]="email" type="email" formControlName="email" style="margin:6.8% 0 0 0;"/>
                        <div class='form-text error' *ngIf="userForm.controls.email.touched">
-                            <div *ngIf="userForm.controls.email.hasError('required')">email is required.</div>
-                            <div *ngIf="userForm.controls.email.hasError('invalidemail')">email is invalid</div>
-                            <div *ngIf="spanEmailId">The Email Already Exists</div>
+                            <div *ngIf="userForm.controls.email.hasError('required')">Email is required.</div>
+                            <div *ngIf="userForm.controls.email.hasError('invalidemail')">Email is invalid</div>
+                            <div *ngIf="spanEmailId">This Email Already Exists</div>
                         </div> 
                     </label>
-            </li>
-             <li>
-                <label><span style="position: absolute;top: 35%;">MobileNo</span>
-                      <input class="user" [(ngModel)]="mobileno" type="text" placeholder="mobileno" formControlName="mobileno" (keypress)="keyPress($event,mobilepattern)" style="margin:11.5% 0 0 0;"/>
+                </li>
+                <li>
+                    <label><span>Mobile No</span>
+                      <input class="user" [(ngModel)]="mobileno" type="text" minlength="10" maxlength="10" formControlName="mobileno" (keypress)="keyPress($event,mobilepattern)"/>
                        <div class='form-text error' *ngIf="userForm.controls.mobileno.touched">
-                            <div *ngIf="userForm.controls.mobileno.hasError('required')">mobileno is required.</div>
-                            <div *ngIf="userForm.controls.mobileno.hasError('invalidnumber')">allow numbers</div>
-                            <div *ngIf="userForm.controls.mobileno.hasError('maxlength')">mobileno should not exceed 10 digits.</div>
-                            <div *ngIf="userForm.controls.mobileno.hasError('minlength')">mobileno should be 10 digits.</div>
+                            <div *ngIf="userForm.controls.mobileno.hasError('required')">Mobile No is required.</div>
+                            <div *ngIf="userForm.controls.mobileno.hasError('invalidnumber')">Allow numbers</div>
+                            <div *ngIf="userForm.controls.mobileno.hasError('maxlength')">Mobile No should not exceed 10 digits.</div>
+                            <div *ngIf="userForm.controls.mobileno.hasError('minlength')">Mobile No should be 10 digits.</div>
                         </div>
-                </label> 
-             </li>
-             <li>
-                <label>
+                </label>
+                </li>
+                <li>
+                    <label>
                         <span>Password</span>
-                        <input class="user" pg-two [(ngModel)]="password" formControlName="password" type="password" placeholder="password" minlength='6'  (click)="toggleShow($event)"/>show
+                        <input class="user" [(ngModel)]="password" formControlName="password" type="password" minlength='6' />
                         <!--<a (click)="toggleShow($event)">show/hide</a>-->
                         <div class='form-text error' *ngIf="userForm.controls.password.touched">
                             <div *ngIf="userForm.controls.password.hasError('required')">Password is required.</div>
                             <div *ngIf="userForm.controls.password.hasError('minlength')">Password isn't long enough.</div>
                         </div>
                 </label>
-                <label><span>ConfirmPassword</span>
-                      <input class="user" [(ngModel)]="confirmPassword" type="password" placeholder="confirmPassword" formControlName="confirmPassword" />
+                    <label><span>ConfirmPassword</span>
+                      <input class="user" [(ngModel)]="confirmPassword" type="password" (paste)="onPaste($event, input)" formControlName="confirmPassword" />
                       <div class='form-text error' *ngIf="userForm.controls.confirmPassword.touched">
-                        <div *ngIf="userForm.hasError('mismatchedPasswords')">Passwords do not match.</div>
+                          <div style="margin-bottom: -43px;" *ngIf="userForm.hasError('mismatchedPasswords')">Passwords do not match.</div>
                     </div>
                 </label>
-            </li>
-        </ul>
-        <p><span>Username must be all lowercase. It should only contain letters and numbers.</span></p>
-        <a id="btnRedirect" [ngClass]="{disabled:(!userForm.valid||spanEmailId)}" routerLink="/three" class="fadeOut one_next" (click)="submit()">Next<i class="zmdi zmdi-long-arrow-right zmdi-hc-fw"></i></a>
-        {{!userForm.valid}}{{spanEmailId}}
-        <p><span>By proceeding to create your account and use Tiny360, you are agreeing to our Terms of Service and Privacy Policy. If you do not agree, you cannot use Tiny360.</span></p>
-    </div>
+                </li>
+            </ul>
+
+            <a id="btnRedirect" [ngClass]="{disabled:(!userForm.valid||spanEmailId)}" routerLink="/three" class="fadeOut one_next" (click)="submit()">Next<i class="zmdi zmdi-long-arrow-right zmdi-hc-fw"></i></a>
+            <p><span>By proceeding to create your account and use Tiny360, you are agreeing to our Terms of Service and Privacy Policy. If you do not agree, you cannot use Tiny360.</span></p>
+        </div>
     </form>
 </aside>
 

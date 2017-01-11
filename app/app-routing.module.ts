@@ -4,13 +4,15 @@ import { OneComponent }   from './one.component';
 import { TwoComponent }      from './two.component';
 import { ThreeComponent }      from './three.component';
 import { FourComponent }      from './four.component';
+import { PlandetailsComponent }      from './plandetails.component';
 
 const routes: Routes = [
-  {path: '',component: OneComponent},
+  { path: '',component: OneComponent  },
   { path: 'one', component: OneComponent },
   { path: 'two', component: TwoComponent },
   { path: 'three', component: ThreeComponent },
-  { path: 'four', component: FourComponent }
+  { path: 'four', component: FourComponent },
+  { path: 'plandetails', component: PlandetailsComponent }
 ];
 
 @NgModule({
