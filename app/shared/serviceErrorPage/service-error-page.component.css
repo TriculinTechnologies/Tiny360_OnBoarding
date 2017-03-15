@@ -1,0 +1,63 @@
+@charset "utf-8";
+
+/* CSS Document */
+
+h1 {
+    font-family: "Lato", sans-serif;
+    font-size: 68px;
+    font-weight: 600;
+    text-align: center;
+    margin: 11% auto;
+    color: #de9952;
+}
+
+p {
+    font-family: "Lato", sans-serif;
+    font-size: 31px;
+    font-weight: 500;
+    text-align: center;
+    display: block;
+    margin: -9% auto;
+    color: #de9952;
+}
+
+input[type="button"] {
+    font-family: "Lato", sans-serif;
+    color: #fff;
+    background-color: #de9952;
+    font-weight: 500;
+    margin: 16% 0 0 42%;
+    border: none;
+    outline: none;
+    width: 16%;
+    height: 100%;
+    font-size: 20px;
+    text-align: center;
+    display: block;
+}
+
+label {
+    float: right !important;
+    margin: 4% 38% 0 0% !important;
+}
+
+select {
+    /* width: 203px; */
+    margin-top: 27px !important;
+    color: black !important;
+    float: right !important;
+    margin-right: -40% !important;
+}
+
+.header {
+    background: rgba(204, 204, 204, 0.56);
+    height: 75px;
+    width: 100%;
+    margin: 0 0 0 -2%;
+}
+
+.logo_one {
+    margin: 3% 0 0 9%;
+    width: 0px;
+    height: 0px;
+}

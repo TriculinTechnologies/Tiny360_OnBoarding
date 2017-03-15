@@ -1,0 +1,158 @@
+<header id="header">
+    <h1 class="logo">
+        <a href="#" title="#"><img src="assets/images/tiny_logo.jpg" /></a>
+    </h1>
+    <div class="border_12"></div>
+    <div class="container-fluid">
+        <ul class="topNavigation">
+            <li>
+                <label style="position: relative;top: 26px;left: -225px;">Language</label>
+                <select style="width: 200px; color:#000;">
+<option value=""> Select Your own Language </option>
+<option value=""> English</option>
+<option value=""> French</option>
+<option value=""> Chinese</option>
+<option value=""> Czech</option>
+<option value="">Turkish</option>
+</select>
+            </li>
+            <li>
+            </li>
+        </ul>
+    </div>
+
+</header>
+
+<div class="clear">
+
+</div>
+<aside class="aside" style="display:none;">
+    <nav class="simpleList asideNavigation">
+        <ul>
+            <li class="active">
+                <i class="fa fa-fw fa-industry icon"></i>
+                <span class="hidden-xs hidden-sm">PLan Selection</span>
+            </li>
+        </ul>
+    </nav>
+</aside>
+
+<div class="clear">
+
+</div>
+<!-- Page Wrap -->
+<div class="pageWrap">
+    <!-- Page content -->
+    <div class="pageContent extended">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-12 col-lg-12">
+                    <h1 class="header_one"> Plan Selection</h1>
+                    <div class="box global">
+                        <!-- Tabs -->
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-4 col-md-8 col-lg-8">
+                                <ul class="nav nav-tabs userProfileTabs" role="tablist">
+                                    <li *ngFor="let plannames of planDetails;let i=index" role="presentation" [class.active]="i==tabIndex">
+                                        <a (click)="goPlan(i)">
+                                            <p> {{plannames.planName}}
+                                                <span class="pay"> From </span>
+                                                <img class="rupee_one" src="assets/images/rupee.png" />
+                                                <span class="pay_one">
+                                                  {{plannames.planStartPrice}}
+                                                </span>
+                                            </p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+
+                                <p class="compare_plans"> Compare Plans</p>
+                            </div>-->
+                        </div>
+                        <div class="tab-content pad_z">
+                            <div role="tabpanel" class="tab-pane fade in active">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                                        <div class="box box-without-bottom-padding global_industry ">
+                                            <div class="row" style="    margin: 0 0 0 -41px;">
+                                                <div *ngIf="plandata">
+                                                    <div class="col-md-4 col-sm-4 col-lg-4 col-xs-12 subplan" *ngFor="let subplannames of plandata.subPlanDetails;let i=index">
+                                                        <ul class="subplan_overflow" [class.subplanbackground]="i==subplanselect">
+                                                            <li>
+                                                                <div class="content">
+                                                                    <div class="row">
+                                                                        <div class="col-md-offset-2 col-md-8">
+                                                                            <p class="subplan_one">{{subplannames.subPlanName}} </p>
+                                                                            <br/>
+                                                                            <h4>{{subplannames.subPlanOrderLimit}} Customer Orders</h4>
+                                                                            <br/>
+                                                                            <!--<div class="border_nine"></div>-->
+                                                                            <p class="subplanname_one">{{subplannames.subPlanOfferPrice}}</p>
+                                                                            <br/>
+                                                                            <span class="subplan_two"> 
+                                        <img class="rupee_two" src="assets/images/1483101353_Indian_Rupee_symbol.png"/>
+                                        <p class="subplanname_two"> 
+                                          {{subplannames.subPlanForMonth}}/month
+                                        </p>
+                                        <br/>
+                                      </span >
+                                      <input type="radio" name={{plandata.planName}} (click)="selectSubPlan($event,i)" value={{subplannames.subPlanName}}>
+                                  </div>
+                              </div>
+                            </div>
+                        </li>
+                      </ul>
+                </div>
+          </div>
+        </div>
+      </div>
+    </div>
+     <div class=" col-md-3 col-lg-3">
+               <div *ngIf="plandata" class="ModuleDetails" >
+                 <span class="heading"><span>{{plandata.planName}}</span>&nbsp; Benefits </span><br>
+                                                                            <br/>
+                                                                            <span *ngFor="let modulenames of plandata.ModuleDetails;"> 
+                   <span *ngIf="modulenames.moduleAvailable == 'A'"><i class="fa fa-check" aria-hidden="true">
+                     </i>{{modulenames.moduleName}}<br> 
+                    </span>
+                                                                            <span class="heading_one" *ngIf="modulenames.moduleAvailable == 'NA'">
+                    <i class="fa fa-times"  aria-hidden="true">
+                    </i>
+                   <del>{{modulenames.moduleName}}</del>
+                    <br/>  
+                    </span>
+                                                                            </span>
+
+                                                                            <h3 style="text-align: center;font-weight: 600;color:#191a1b;"> {{plandata.planName}} {{subplanselectdetails.subPlanName}} <br> For <img class="rupee_three" src="assets/images/1483101353_Indian_Rupee_symbol.png" /> {{subplanselectdetails.subPlanOfferPrice}}</h3>
+
+                                                                            <div class="content_one">
+
+                                                                                <p class="parag_one"><img class="rupee_four" src="assets/images/1483101353_Indian_Rupee_symbol.png" /> {{subplanselectdetails.subPlanOfferPrice}}</p>
+
+                                                                                <div class="border_three"> </div>
+
+                                                                                <div class="border_eight"></div>
+
+                                                                                <a>
+                                                                                    <p class="cont" style="font-size: 25px;margin: -31px 0 0 -15vh;color: #fff;" (click)="paidPlanSubmit()"> Continue </p>
+                                                                                </a>
+                                                                            </div>
+
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </div>

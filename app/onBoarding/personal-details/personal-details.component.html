@@ -1,0 +1,152 @@
+<!--<p>
+  personal-details works! -->
+<!--<app-login></app-login>-->
+
+<!--</p>
+<a routerLink="/onboarding/registration-details">NextRD</a>-->
+
+<aside>
+    <div class="logo">
+        <a href="#"><img src="assets/images/tiny_logo.jpg" /></a>
+    </div>
+    <form [formGroup]="userForm">
+        <div class="your_details">
+            <h1>What's your Name?</h1>
+            <p>This Name will be displayed as your profile Name.</p>
+            <ul>
+                <li>
+                    <label>
+                    <span>Your Name</span>
+                	<input type="text" [(ngModel)]="firstname" formControlName="firstname" placeholder="First Name" minlength="3"  (keypress)="keyPress($event,textpattern)"/>
+                    <div class='form-text error' *ngIf="userForm.controls.firstname.touched" style=" position: relative;top: -7px;left: 0px;">
+                        <div *ngIf="userForm.controls.firstname.hasError('required')" style="position:relative; top:37%;">Firstname is required.</div>
+                        <div *ngIf="userForm.controls.firstname.hasError('invalidtext')">Allow characters</div>
+                        <div *ngIf="userForm.controls.firstname.hasError('minlength')" style="position: relative; top:26.5%;">Firstname isn't long enough.</div>
+                    </div> 
+                    <input type="text" [(ngModel)]="lastname"  formControlName="lastname" placeholder="Last Name" (keypress)="keyPress($event,textpattern)" style="position: absolute;top: 209px;left: 258px;width: 194px;"/>
+                    <div class='form-text error' *ngIf="userForm.controls.lastname.touched" style="    position: absolute;top: 248px;left: 258px;">
+                        <div *ngIf="userForm.controls.lastname.hasError('required')" >Lastname is required.</div>
+                        <div *ngIf="userForm.controls.lastname.hasError('invalidtext')">Allow characters</div>
+                    </div>  
+                    </label>
+                </li>
+                <li>
+                    <label>
+                      <span>Email Id</span>
+                      <input class="user" [(ngModel)]="email" type="email" formControlName="email" (mouseout)="emailValidation(email)"/>
+                      <div class='form-text error' *ngIf="userForm.controls.email.touched">
+                            <div *ngIf="userForm.controls.email.hasError('required')">Email is required.</div>
+                            <div *ngIf="userForm.controls.email.hasError('invalidemail')">Email is invalid</div>
+                            <div *ngIf="spanEmailId">This Email Already Exists</div>
+                      </div> 
+                    </label>
+                    <div *ngIf="processing" class="ispinner ispinner--gray ispinner--animating">
+                        <div class="ispinner__blade"></div>
+                        <div class="ispinner__blade"></div>
+                        <div class="ispinner__blade"></div>
+                        <div class="ispinner__blade"></div>
+                        <div class="ispinner__blade"></div>
+                        <div class="ispinner__blade"></div>
+                        <div class="ispinner__blade"></div>
+                        <div class="ispinner__blade"></div>
+                        <div class="ispinner__blade"></div>
+                        <div class="ispinner__blade"></div>
+                        <div class="ispinner__blade"></div>
+                        <div class="ispinner__blade"></div>
+                    </div>
+                </li>
+                <li>
+                    <label>
+                      <span>Mobile No</span>
+                      <input class="user" [(ngModel)]="mobileno" type="text" minlength="10" maxlength="10"  formControlName="mobileno" (keypress)="keyPress($event,mobilepattern)" />
+                      <div class='form-text error' *ngIf="userForm.controls.mobileno.touched">
+                            <div *ngIf="userForm.controls.mobileno.hasError('required')">Mobile No is required.</div>
+                            <div *ngIf="userForm.controls.mobileno.hasError('invalidnumber')">Allow numbers</div>
+                            <div *ngIf="userForm.controls.mobileno.hasError('maxlength')">Mobile No should not exceed 10 digits.</div>
+                            <div *ngIf="userForm.controls.mobileno.hasError('minlength')">Mobile No should be 10 digits.</div>
+                      </div>
+                </label>
+                </li>
+                <li>
+                    <label>
+                        <span>Password</span>
+                        <input class="user" [(ngModel)]="password" formControlName="password" type="password" minlength='6'/>
+                        <div class='form-text error' *ngIf="userForm.controls.password.touched">
+                            <div *ngIf="userForm.controls.password.hasError('required')">Password is required.</div>
+                            <div *ngIf="userForm.controls.password.hasError('minlength')">Password isn't long enough.</div>
+                        </div>
+                    </label>
+                    <label>
+                      <span>Confirm Password</span>
+                      <input class="user" [(ngModel)]="confirmPassword" type="password" (paste)="onPaste($event, input)" formControlName="confirmPassword" />
+                      <div class='form-text error' *ngIf="userForm.controls.confirmPassword.touched">
+                        <div style="" *ngIf="userForm.hasError('mismatchedPasswords')">Passwords do not match.</div>
+                      </div>
+                    </label>
+                </li>
+                <li> <a id="btnRedirect" [ngClass]="{disabled:(!userForm.valid || spanEmailId || processing)}" class="fadeOut one_next" (click)="submit()">Next<i class="zmdi zmdi-long-arrow-right zmdi-hc-fw"></i></a></li>
+            </ul>
+        </div>
+    </form>
+</aside>
+
+<div class="one_right">
+    <div class="right_cont">
+        <img src="assets/images/one.png" alt="" />
+        <p>Thank you for choosing Tiny360 to automate your business process. Just help us to provide some information to create account.</p><br>
+    </div>
+</div>
+
+<!--	one page end	-->
+
+<!-- Header -->
+<!-- Search modal -->
+<div class="modal fade in" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <form>
+                    <input type="text" class="form-control" placeholder="Type search term...">
+                    <button type="submit" class="btn">Go</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JS -->
+<script src="assets/js/jquery-1.11.3.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/js/jquery-ui.min.js"></script>
+<!--<script src="assets/js/select2.min.js"></script>
+	<script src="assets/js/parsley.min.js"></script>
+	<script src="assets/js/throttle-debounce.min.js"></script>
+	<script src="assets/js/jquery.shuffle.min.js"></script>
+	<script src="assets/js/autosize.min.js"></script>
+	<script src="assets/js/raphael-min.js"></script>
+	<script src="assets/js/morris.min.js"></script>
+	<script src="assets/js/Chart.min.js"></script>
+	<script src="assets/js/chartist.min.js"></script>
+	<script src="assets/js/jquery.fullscreen.min.js"></script>
+	<script src="assets/js/app.min.js"></script>-->
+
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        //	$(".your_details_edit ul#five_a").hide();
+        $(".your_details ul li input").click(function() {
+            $(".your_details a").addClass(".your_details .one_next");
+            //	$(".your_details a").addClass("fadeIn");
+            //    $(".your_details a").css("background-color", "#18be8c");
+            $(".your_details a").fadeIn(100);
+            //	$(".your_details a").show();
+        });
+
+    });
+</script>
+
+
+<div class="visible-xs visible-sm extendedChecker"></div>
+
+
+<!-- direct end -->

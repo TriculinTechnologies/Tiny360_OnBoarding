@@ -1,0 +1,153 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+
+.rupee_one{ width:4% !important;
+    /*height: 4%;*/
+    margin: -4px 0% 0 -1%;
+    display: inline-block;
+    /*float:initial !important*/
+}
+
+    
+.rupee_two{ width:4% !important; 
+    /*height: 4%;*/
+    margin: -2px 0 0 -1%;
+    display: inline-block; }
+    
+.rupee_three{ width:7% !important;
+    /*height: 2%;*/
+    margin: -2px 0 0 -1%;
+    display: inline-block;}
+    
+    
+#header{
+    background: #a5aaad !important;
+    color: #fff !important;
+    min-height: 60px !important;
+    position: relative !important;
+    z-index: 5;
+    width: 100%;
+    margin: -1% 0 0 0%;
+    padding: 0 0 0 2%;
+}
+
+
+.box {
+    background: #fff !important;
+    padding: 30px !important;
+    margin: 1% 0 0px 0 !important;
+}
+
+.header_one{ font-family: "Lato", sans-serif; font-size:23px; font-weight:600; margin:2% 0 0 0; text-align:center;color:#FFF; background-color:#4b92d1; width:20%; height:44px; line-height:44px;} 
+
+.nav-tabs.userProfileTabs {
+    margin-bottom: 50px !important;
+}
+
+.border_12{
+        border: 5px solid #18be8c;
+    width: 100%;
+    /* margin: 0% 0 0% 0; */
+    position: absolute;
+    top: 100%;
+    right: 0%;
+}
+
+clear{ clear:both;}
+
+
+#header .topNavigation {
+    padding: 0;
+    margin: 1% 4% 0 0;
+    text-align: right;
+    float: right;
+}
+
+.nav-tabs>li {
+    float: left;
+    margin-bottom: -5px;
+}
+
+#header .logo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 2% 0 0 20px;
+    line-height: 0px;
+    /* font-size: 22px; */
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.nav-tabs > li > a :hover {
+    border: 0;
+    /* border-bottom: 1px solid #9da2a6; */
+    background: 0 0;
+    color: #363f45;
+}
+
+.nav-tabs > li.active > a :hover {
+    background: 0 0;
+    border: 0;
+    /* border-bottom: 1px solid #fe5621; */
+    /* color: #fe5621; */
+}
+    
+.subplan_overflow:hover{ background:#18be8c !important;} 
+
+.asideNavigation > ul > .active{ margin:26% 0 0 0;}
+
+.extended{ width: 100%;margin-left: 0px; }
+
+.userProfileTabs li{ width:32%;} 
+
+.userProfileTabs li a .rupee_one{ width:4%;} 
+
+.userProfileTabs li a p{ font-size:20px;}
+
+.compare_plans{font-size: 25px;margin: 3% 0 0 18%;font-weight: 500;color:#f00;}
+
+.subplan{padding: 0 0 10% 2%;}
+
+.subplan_overflow{background:rgba(204, 204, 204, 0.43);margin: -27% 0% 0 0%;}
+
+.subplan_overflow > li{ height: 290px;}
+
+.subplan_one{text-align: center;margin: 11% 0 0% 7%;float: left;font-size: 25px;font-weight: 600;}
+
+.content h4{ text-align: center;border-bottom: 1px solid #ccc;width: 90%;margin: 25% 0 0 5%;}
+
+.subplanname_one{text-align: center;margin: 0% 0 0 0;}
+
+.subplan_two{align-items: center}
+
+.rupee_two{ margin: -49px 0 0 22%;width: 7% !important;}
+
+.subplanname_two{ text-align: center;margin: -25% 0 0 10%;}
+
+.content input[type="radio"]{/*margin: 20% 0 0 41%;*/width: 30px;height: 22px; position:relative;top: 20px;left: 89px; }
+
+.ModuleDetails{ width: 47vh;background: #ccc;height: auto;line-height: 30px;padding: 0 0 0 14%;border-bottom: 1px solid #ccc;    margin: -38px 0 0 75px;}
+
+.ModuleDetails .heading{ font-family: "Lato", sans-serif;font-size: 25px;margin: 3% 0 0 8%;font-weight: 600;text-align: center;float: left;color: #4b92d1;}
+
+.ModuleDetails .heading_one{position: relative;top: 2px;right: 0%;}
+
+.ModuleDetails h3{ font-family:"Lato", sans-serif; font-size:16px; color:#363f45;margin: 17px -18px 0 -26px; text-align:justify; }
+
+.ModuleDetails .rupee_three{ width:4% !important; margin:0 0 0 0;}
+
+.ModuleDetails .content_one{background-color: #4b92d1;margin: 2% 0 0 -15.5%;height: 12%;display: -webkit-box;padding: 8% 0 0 0;}
+
+.ModuleDetails .parag_one{font-family: "Lato", sans-serif;font-size: 18px;margin: -1% 47% 0 22%;text-align: center;font-weight: 400;color: #fff;}
+
+.ModuleDetails .rupee_four{width: 13% !important;display: inline-block;margin: -2% -2% 0 2%;}
+
+.ModuleDetails .border_eight{border-right: 1px solid #fff;height: 16px;display: inline-block;margin: 0% 0 0 -19vh;}
+
+.content_one a .cont{ font-family:"Lato", sans-serif; margin:0 0 0 0; font-size:24px; color:#fff;}
+
+.subplanbackground{ background: #18be8c;}

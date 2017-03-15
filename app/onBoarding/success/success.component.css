@@ -1,0 +1,98 @@
+@charset "utf-8";
+
+/* CSS Document */
+
+.header-top {
+    background-color: #52c799;
+    height: 142px;
+    width: 85%;
+    margin: 0 auto;
+}
+
+.header-top h3 {
+    color: #fff;
+    text-align: center;
+    margin: -64px 0 -1% 0%;
+    font-size: 30px;
+}
+
+.header-top h4 {
+    color: #fff;
+    text-align: center;
+    margin: 2% 0 0 0%;
+    font-size: 24px;
+}
+
+.header-top h5 {
+    color: #fff;
+    text-align: center;
+}
+
+.right {
+    height: 87px;
+    margin: 2% 0 0 13%;
+    width: 100px;
+}
+
+
+/*.header-bottom{ margin:0% 0 0 0%;     background-color: rgba(204, 204, 204, 0.17); width: 85%; margin: 0 auto; border: 1px solid #ccc; height:400px; }
+.header-bottom h3{ border:1px solid #ccc; width:40%; height:200px; box-shadow: 1px 1px 1px 1px #ccc; margin:5% auto; text-align:center;     color: #ababab;}
+.header-bottom h4{ text-align:center; margin: -21% 0 0 0px; color:#52c799; font-size:18px;}
+.header-bottom ul{ text-align:center; margin:2% 0 0 33%;}
+.header-bottom ul li{ list-style:none; width:50%; text-align: left; line-height: 30px;  }
+ .date{  margin:0 0 0 5%; width:50%; margin:0 0 0 18%; }
+.name{  margin:0 0 0 5%; width:50%; margin:0 0 0 39%;}
+.time{  margin:0 0 0 5%; width:50%; margin:0 0 0 15%;  }
+.total{  margin:0 0 0 5%; width:50%; margin:0 0 0 26%; }
+.header-bottom ul li a{ text-decoration:none; color:#ababab; font-size:15px;}
+.header-btm{ margin:0 0 0 0%; height:12px;}
+*/
+
+.box_total {
+    border: 1px solid #ccc;
+    height: auto;
+    width: 30%;
+    margin: 45px auto;
+    box-shadow: 0px 0px 10px 5px #999999;
+    border-radius: 10px;
+}
+
+.box_header1 h3 {
+    text-align: center;
+    color: #ababab;
+}
+
+.box_header2 h3 {
+    text-align: center;
+    color: #52c799;
+    font-size: 24px;
+}
+
+.box_nav {
+    text-align: center;
+}
+
+.box_nav ul {}
+
+.box_nav ul li {
+    list-style: none;
+    text-align: left;
+    line-height: 48px;
+    width: 100%;
+}
+
+.box_nav ul li span {
+    list-style: none;
+    margin: 0% 0% 0 3%;
+    width: 100%;
+}
+
+.box_nav ul li a {
+    text-decoration: none;
+    color: #b8c0c9;
+    font-size: 16px;
+}
+
+.payment {
+    border-bottom: 1px solid #b8c0c9;
+}

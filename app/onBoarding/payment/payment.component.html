@@ -1,0 +1,345 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="header">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="logo_one">
+                            <img class="logo_two" src="assets/images/tiny_logo-01.jpg" />
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <label style="float: right;margin-right: 216px;margin-top: 30px;">Language</label>
+                        <select style="float: right;margin: 5% -41% 0 0;"> 
+                <option value=""> Select Your own Language </option>
+                         <option value=""> English</option>
+                         <option value=""> French</option>
+                         <option value=""> Chinese</option>
+                         <option value=""> Czech</option>
+                         <option value="">Trurkish</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="border"></div>
+            <div class="payment_headerdown">
+                <h3>Secure Transaction Gate way</h3>
+            </div>
+            <div class="merchant_details">
+                <div class="col-lg-12">
+                    <div class="col-lg-6">
+                        <div class="left_merchant">
+                            <h2>Merchant Details</h2>
+                            <span class="com"> Company</span>
+                            <h3>Customer Details</h3>
+                            <span>First Name:</span><br>
+                            <span class="last">Last Name:</span><br>
+                            <span class="letter">Email:</span><br>
+                            <span class="one_1">Business Address:</span><br>
+                            <span class="one_2">City:</span><br>
+                            <span class="one_3">State:</span><br>
+                            <span class="one_5">Post Code:</span><br>
+                            <span class="one_6">Country:</span><br>
+                            <span class="one_7">Phone No:</span><br>
+                            <h4>Tiny360 Plan Details</h4>
+                            <span class="one_8">Plan type:</span><br>
+                            <p class="payments">1xEstater , 1xEmega , 1xEzumbo</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="right_merchant">
+
+                            <span style="width: 100px;margin: 0 0 0 24px;"> <input type="radio" name="card" (click)="selectpayment($event)" value="credit" style="margin: -2.8% 0 0 -4%;" checked/> Credit Card </span>
+                            <span><input type="radio" name="card" (click)="selectpayment($event)" value="debit"/> Debit Card </span>
+                            <span><input type="radio" name="card" (click)="selectpayment($event)" value="net"/> Net Banking </span>
+
+                            <div class="clear"></div>
+                            <form [formGroup]="userForm">
+                                <div class="creditcard" id="credit_details" *ngIf="'credit'==name">
+
+                                    <h4> Enter Your Credit Card Details </h4>
+
+                                    <div class="form-group visa">
+                                        <label for="usr">Name on Card</label>
+                                        <input type="text" formControlName="cardname" class="form-control" id="usr" (keypress)="keyPress($event,textpattern)">
+                                        <div class='form-text error' *ngIf="userForm.controls.cardname.touched">
+                                            <div *ngIf="userForm.controls.cardname.hasError('required')">This field is required.</div>
+                                            <div *ngIf="userForm.controls.cardname.hasError('invalidtext')">Allow characters</div>
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+
+                                    <div class="form-group credit">
+                                        <label for="usr">Card Number:</label>
+                                        <input type="text" formControlName="cardnumber" minlength="13" maxlength="16" class="form-control" id="usr_1" (keypress)="keyPress($event,numberpattern)">
+                                        <div class='form-text error' *ngIf="userForm.controls.cardnumber.touched">
+                                            <div *ngIf="userForm.controls.cardnumber.hasError('required')">This field is required.</div>
+                                            <!--<div *ngIf="userForm.controls.cardnumber.hasError('invalidnumber')">Allow numbers</div>-->
+                                            <div *ngIf="userForm.controls.cardnumber.hasError('maxlength')">cardnumber should not exceed 16 digits.</div>
+                                            <div *ngIf="userForm.controls.cardnumber.hasError('minlength')">cardnumber should be 13 digits.</div>
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                    <div class="cvv">
+                                        <h6>CVV :</h6><span class="img_ques"><img src="assets/images/question-mark-on-a-circular-black-background.png"/></span>
+                                        <input type="text" formControlName="cvv" class="form-control" maxlength="3" id="user" (keypress)="keyPress($event,numberpattern)">
+                                        <div class='form-text error' *ngIf="userForm.controls.cvv.touched">
+                                            <div *ngIf="userForm.controls.cvv.hasError('required')" id="required">This field is required.</div>
+                                            <div *ngIf="userForm.controls.cvv.hasError('invalidnumber')">Allow numbers</div>
+                                            <div *ngIf="userForm.controls.cvv.hasError('maxlength')">cardnumber should not exceed 10 digits.</div>
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                    <div class="expiry">
+                                        <label> Expiry Date: </label>
+                                        <select class="select" id="id_exp_mon" formControlName="month">
+                                           <option value="01">01</option>
+                                           <option value="02">02</option>
+                                           <option value="03">03</option>
+                                           <option value="04">04</option>
+                                           <option value="05">05</option>
+                                           <option value="06">06</option>
+                                            <option value="07">07</option>
+                                            <option value="08">08</option>
+                                            <option value="09">09</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                                 <option value="12">12</option>    
+                                             </select>
+                                        <img class="arrows" src="assets/images/triangles-forming-arrow-up-and-down.png" />
+                                        <select class="select_one" id="id_exp_year" formControlName="year">
+                                        <option value="2013">2013</option>
+                                        <option value="2014">2014</option>
+                                        <option value="2015">2015</option>
+                                        <option value="2016">2016</option>
+                                        <option value="2017">2017</option>
+                                        <option value="2018">2018</option>
+                                         <option value="2019">2019</option>
+                                         <option value="2020">2020</option>
+                                         <option value="2021">2021</option>
+                                         <option value="2022">2022</option>
+                                         <option value="2023">2023</option>
+                                         <option value="2024">2024</option>
+                                         <option value="2025">2025</option>
+                                         <option value="2026">2026</option>
+                                        <option value="2027">2027</option>
+                                        <option value="2028">2028</option>
+                                       <option value="2029">2029</option>    
+                                       </select>
+                                        <img class="arrows_one" src="assets/images/triangles-forming-arrow-up-and-down.png" />
+                                        <p class="expiry_one"> Month/Year</p>
+                                        <div class='form-text error' *ngIf="userForm.controls.year.touched || userForm.controls.month.touched">
+                                            <div *ngIf="userForm.controls.year.hasError('required') || userForm.controls.month.hasError('required')">This field is required.</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="clear"></div>
+
+                                    <span class="purchase"><h5>purchase Amount:</h5> <p class="inr"><img class="inr_one" src="assets/images/rupee.png"/>50,000</p></span>
+
+                                    <div class="clear"></div>
+
+                                    <div class="proceed"><img class="exclamation" src="assets/images/large-exclamation-mark (3).png">
+                                        <h6>Click The Process "Button" Once Only And Then Please Wait <br/> Processing Time May Take 60 Sec</h6>
+                                    </div>
+                                    <div class="button">CANCEL</div>
+
+                                    <div class="button2" (click)="processTransaction()">PROCESS TRANSACTION <img class="arrows_two" src="assets/images/double-angle-pointing-to-right.png" /></div>
+                                    <div class="clear"></div>
+
+                                </div>
+                            </form>
+                            <form [formGroup]="userform">
+                                <div class="creditcard_four" id="debit_details" *ngIf="'debit'==name" style="display:block">
+
+                                    <h3> Enter Your Debit Card Details </h3>
+
+                                    <div class="form-group visa">
+                                        <label for="usr">Name on Card</label>
+                                        <input type="text" formControlName="cardName" class="form-control" id="usr">
+                                        <div class='form-text error' *ngIf="userform.controls.cardName.touched">
+                                            <div *ngIf="userform.controls.cardName.hasError('required')">This field is required.</div>
+                                            <div *ngIf="userform.controls.cardName.hasError('invalidtext')">Allow characters</div>
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+
+                                    <div class="form-group credit">
+                                        <label for="usr">Card Number:</label>
+                                        <input type="text" formControlName="cardNo" minlength="13" maxlength="16" class="form-control" id="usr_1" (keypress)="keyPress($event,mobilepattern)">
+                                        <div class='form-text error' *ngIf="userform.controls.cardNo.touched">
+                                            <div *ngIf="userform.controls.cardNo.hasError('required')">This field is required.</div>
+                                            <!--<div *ngIf="userForm.controls.cardNo.hasError('invalidtext')">Allow numbers</div>-->
+                                            <div *ngIf="userform.controls.cardNo.hasError('maxlength')">cardnumber should not exceed 16 digits.</div>
+                                            <div *ngIf="userform.controls.cardNo.hasError('minlength')">cardnumber should be 13 digits.</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="clear"></div>
+
+                                    <div class="cvv">
+                                        <h6>CVV :</h6><span class="img_ques"><img src="assets/images/question-mark-on-a-circular-black-background.png"/></span>
+                                        <input type="text" formControlName="CVV" class="form-control" maxlength="3" id="user" (keypress)="keyPress($event,numberpattern)">
+                                        <div class='form-text error' *ngIf="userform.controls.CVV.touched">
+                                            <div *ngIf="userform.controls.CVV.hasError('required')" id="required">This field is required.</div>
+                                            <div *ngIf="userform.controls.CVV.hasError('invalidtext')">Allow numbers</div>
+                                            <div *ngIf="userForm.controls.CVV.hasError('maxlength')">cardnumber should not exceed 10 digits.</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="clear"></div>
+
+                                    <div class="expiry">
+
+                                        <label> Expiry Date: </label>
+
+                                        <select class="select" id="id_exp_mon" formControlName="Month">
+                                        <option value="01">01</option>
+                                        <option value="02">02</option>
+                                        <option value="03">03</option>
+                                        <option value="04">04</option>
+                                        <option value="05">05</option>
+                                        <option value="06">06</option>
+                                        <option value="07">07</option>
+                                        <option value="08">08</option>
+                                        <option value="09">09</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>    
+                                        </select>
+
+                                        <img class="arrows" src="assets/images/triangles-forming-arrow-up-and-down.png" />
+
+                                        <select class="select_one" id="id_exp_year" formControlName="Year">
+                                        <option value="2013">2013</option>
+                                        <option value="2014">2014</option>
+                                        <option value="2015">2015</option>
+                                        <option value="2016">2016</option>
+                                        <option value="2017">2017</option>
+                                        <option value="2018">2018</option>
+                                        <option value="2019">2019</option>
+                                        <option value="2020">2020</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2024">2024</option>
+                                        <option value="2025">2025</option>
+                                        <option value="2026">2026</option>
+                                        <option value="2027">2027</option>
+                                        <option value="2028">2028</option>
+                                        <option value="2029">2029</option>    
+                                        </select>
+
+                                        <img class="arrows_one" src="assets/images/triangles-forming-arrow-up-and-down.png" />
+
+                                        <p class="expiry_one"> Month/Year</p>
+                                        <div class='form-text error' *ngIf="userform.controls.Year.touched || userform.controls.Month.touched">
+                                            <div *ngIf="userform.controls.Year.hasError('required') || userform.controls.Month.hasError('required')">This field is required.</div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="clear"></div>
+
+                                    <span class="purchase"><h5>purchase Amount:</h5> <p class="inr"><img class="inr_one" src="assets/images/rupee.png"/>50,000</p></span>
+
+                                    <div class="clear"></div>
+
+                                    <div class="proceed"><img class="exclamation" src="assets/images/large-exclamation-mark (3).png">
+                                        <h6>Click The Process "Button" Once Only And Then Please Wait <br/> Processing Time May Take 60 Sec</h6>
+                                    </div>
+                                    <div class="button">CANCEL</div>
+                                    <div class="button2" (click)="processTransaction()">PROCESS TRANSACTION <img class="arrows_two" src="assets/images/double-angle-pointing-to-right.png" /></div>
+                                    <div class="clear"></div>
+
+                                </div>
+                            </form>
+
+                            <form [formGroup]="UserForm">
+                                <div class="creditcard_five" id="net_details" *ngIf="'net'==name" style="display:block">
+                                    <label>Choose a Bank</label>
+                                    <select class="netbanking" formControlName="bank">
+                                                    <option value=""></option>
+                                                    <option value="UTI">Axis Bank</option>
+                                                    <option value="HDF">HDFC Bank</option>
+                                                    <option value="ICI">ICICI Bank</option>
+                                                    <option value="SBI">State Bank of India</option>
+                                                    <optgroup label="-----------------"></optgroup>
+                                                    <option value="ALB">Allahabad Bank</option>
+                                                    <option value="ADB">Andhra Bank</option>
+                                                    <option value="BBK">Bank of Bahrain and Kuwait</option>
+                                                    <option value="BBC">Bank of Baroda - Corporate Banking</option>
+                                                    <option value="BBR">Bank of Baroda - Retail Banking</option>
+                                                    <option value="BOI">Bank of India</option>
+                                                    <option value="BOM">Bank of Maharashtra</option>
+                                                    <option value="CNB">Canara Bank</option>
+                                                    <option value="CSB">Catholic Syrian Bank</option>
+                                                    <option value="CBI">Central Bank of India</option>
+                                                    <option value="CUB">City Union Bank</option>
+                                                    <option value="CRP">Corporation Bank</option>
+                                                    <option value="COB">Cosmos Bank</option>
+                                                    <option value="DEN">Dena Bank</option>
+                                                    <option value="DBK">Deutsche Bank</option>
+                                                    <option value="DCB">Development Credit Bank</option>
+                                                    <option value="DLB">Dhanlakshmi Bank</option>
+                                                    <option value="FBK">Federal Bank</option>
+                                                    <option value="IDB">IDBI Bank</option>
+                                                    <option value="ING">ING Vysya Bank</option>
+                                                    <option value="INB">Indian Bank</option>
+                                                    <option value="IOB">Indian Overseas Bank</option>
+                                                    <option value="IDS">IndusInd Bank</option>
+                                                    <option value="JKB">Jammu & Kashmir Bank</option>
+                                                    <option value="KBL">Karnataka Bank Ltd</option>
+                                                    <option value="KVB">Karur Vysya Bank</option>
+                                                    <option value="162">Kotak Bank</option>
+                                                    <option value="LVC">Laxmi Vilas Bank - Corporate</option>
+                                                    <option value="LVR">Laxmi Vilas Bank - Retail</option>
+                                                    <option value="OBC">Oriental Bank of Commerce</option>
+                                                    <option value="PMC">Punjab & Maharashtra Co-operative Bank</option>
+                                                    <option value="PSB">Punjab & Sind Bank</option>
+                                                    <option value="CPN">Punjab National Bank - Corporate Banking</option>
+                                                    <option value="PNB">Punjab National Bank - Retail Banking</option>
+                                                    <option value="RTN">RBL Bank Limited</option>
+                                                    <option value="SWB">Saraswat Bank</option>
+                                                    <option value="SVC">Shamrao Vitthal Co-operative Bank</option>
+                                                    <option value="SIB">South Indian Bank</option>
+                                                    <option value="SCB">Standard Chartered Bank</option>
+                                                    <option value="SBJ">State Bank of Bikaner & Jaipur</option>
+                                                    <option value="SBH">State Bank of Hyderabad</option>
+                                                    <option value="SBM">State Bank of Mysore</option>
+                                                    <option value="SBP">State Bank of Patiala</option>
+                                                    <option value="SBT">State Bank of Travancore</option>
+                                                    <option value="SYD">Syndicate Bank</option>
+                                                    <option value="TNC">Tamil Nadu State Co-operative Bank</option>
+                                                    <option value="TMB">Tamilnad Mercantile Bank Ltd.</option>
+                                                    <option value="RBS">The Royal Bank of Scotland</option>
+                                                    <option value="UBI">Union Bank of India</option>
+                                                    <option value="UNI">United Bank of India</option>
+                                                    <option value="VJB">Vijaya Bank</option>
+                                                    <option value="YBK">Yes Bank Ltd</option>
+                                                </select>
+                                    <div class='form-text error' *ngIf="UserForm.controls.bank.touched">
+                                        <div *ngIf="UserForm.controls.bank.hasError('required')">This field is required.</div>
+                                    </div>
+
+                                    <div class="button">CANCEL</div>
+                                    <div class="button2" (click)="processTransaction()">PROCESS TRANSACTION <img class="arrows_two" src="assets/images/double-angle-pointing-to-right.png" /></div>
+                                    <div class="clear"></div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/js/modernizr-2.8.3.min.js"></script>

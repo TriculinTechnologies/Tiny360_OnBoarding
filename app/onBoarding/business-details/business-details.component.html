@@ -1,0 +1,120 @@
+<!--<p>
+  business-details works!
+</p>-->
+<!--<a routerLink="personal-details"> NextPD </a>-->
+<!--<a> NextPD </a>-->
+
+<aside>
+    <div class="logo">
+        <a href="#"><img src="assets/images/tiny_logo.jpg" /></a>
+    </div>
+    <form [formGroup]="userForm">
+        <div class="your_details two">
+            <h1>Business Details</h1>
+            <!--<p>Your name will be displayed along with your messages in Tiny.</p>-->
+            <ul>
+
+                <li>
+                    <label><span>Business Name</span> </label>
+                    <input [(ngModel)]="businessname" formControlName="businessname" style="margin:0; width:100%;" (keypress)="keyPress($event,textpattern)" type="text" />
+                    <div class='form-text error' *ngIf="userForm.controls.businessname.touched">
+                        <div *ngIf="userForm.controls.businessname.hasError('required')">This field is required.</div>
+                        <div *ngIf="userForm.controls.businessname.hasError('invalidtext')">Allow characters</div>
+                    </div>
+                </li>
+
+                <li>
+                    <label for="classic-select">Type of Business</label>
+                    <select style="width: 100%;height: 30px;" [(ngModel)]="typeOfBusiness" formControlName="typeOfBusiness" placeholder="selectone" required>
+                                 <option>Dry Cleaning </option>
+                                 <option>Laundry</option>
+                                 <option>Clothing Alteration</option>
+                                 <option>Tailoring</option>
+                                 <option>Embroidery</option>                             
+                            </select>
+                    <div class='form-text error' *ngIf="userForm.controls.typeOfBusiness.touched">
+                        <div *ngIf="userForm.controls.typeOfBusiness.hasError('required')">This field is required.</div>
+                    </div>
+                </li>
+                <li><label><span>Website</span></label>
+                    <input style="margin:0; width:100%;" type="text" [(ngModel)]="websitename" formControlName="websitename" placeholder="www.example.com" />
+                    <div class='form-text error' *ngIf="userForm.controls.websitename.touched">
+                        <div *ngIf="userForm.controls.websitename.hasError('invalidurl')">Give valid url ( www.example.com )</div>
+                    </div>
+                </li>
+                <li>
+                    <label><span>Business Address</span></label>
+                    <textarea placeholder="" rows="2" cols="5" [(ngModel)]="businessAddress" formControlName="businessAddress"></textarea>
+                    <div class='form-text error' *ngIf="userForm.controls.businessAddress.touched">
+                        <div *ngIf="userForm.controls.businessAddress.hasError('invalidaddress')">invalid address</div>
+                    </div>
+                </li>
+                <li>
+                    <!--style=" background: #f2f2f2;border: 1px solid #ccc;height: 130px;width: 130px;float: left;border: dashed 2px #666;margin-top: 8px;position: relative;" -->
+                    <div class="photo_edit ">
+                        <img [src]="url" />
+                        <div class="photo_change">Image Change</div>
+
+                        {{imageData}}
+                    </div>
+                    <input type="file" name="pic" accept="image/*" (change)="readUrl($event)" style=" float:left; font-size:14px; margin:10px 20px; width:100px;">
+
+                    <div style="clear:both;"></div>
+
+                </li>
+                <!--<li>
+                <span>Logo</span>
+                <!--<input type="file" name="pic" accept="image/*" style="width:100%;">
+                
+                <!--<div class="" style="background:#f2f2f2; border:1px solid #ccc; height:130px; width:130px; float:left;border: dashed 2px #666; margin-top:8px;"></div>
+                <input type="file" name="pic" accept="image/*"  (change)="readUrl($event)" style=" float:left; font-size:14px; margin:10px 20px;">
+                <div class="clear"></div>
+            </li>-->
+            </ul>
+            <a id="btnRedirect" [ngClass]="{disabled:!userForm.valid}" class="two_next" (click)="submit()">Next<i class="zmdi zmdi-long-arrow-right zmdi-hc-fw"></i></a>
+
+        </div>
+    </form>
+</aside>
+
+<div class="two_right">
+    <div class="two_right_cont">
+
+        <img class="two_pic" src="assets/images/two.png" />
+        <!--<h3>Hello!</h3>
+        <p>Your are just second away from seeting of your account.</p>
+        <p>Just helpers to provide some information to create account.</p>-->
+    </div>
+    <p class="enter">Enter your business information.</p>
+</div>
+
+<!--	one page end	-->
+
+<!-- Header -->
+
+
+
+
+<!-- Page Wrap -->
+
+
+<!-- Search modal -->
+
+
+<!-- JS -->
+<script src="assets/js/jquery-1.11.3.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/js/jquery-ui.min.js"></script>
+<script src="assets/js/select2.min.js"></script>
+<script src="assets/js/parsley.min.js"></script>
+<script src="assets/js/throttle-debounce.min.js"></script>
+<script src="assets/js/jquery.shuffle.min.js"></script>
+<script src="assets/js/autosize.min.js"></script>
+<script src="assets/js/raphael-min.js"></script>
+<script src="assets/js/morris.min.js"></script>
+<script src="assets/js/Chart.min.js"></script>
+<script src="assets/js/chartist.min.js"></script>
+<script src="assets/js/jquery.fullscreen.min.js"></script>
+<script src="assets/js/app.min.js"></script>
+
+<div class="visible-xs visible-sm extendedChecker"></div>

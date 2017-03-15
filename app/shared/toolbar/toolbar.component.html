@@ -1,0 +1,23 @@
+<p>
+  toolbar works!
+</p>
+
+<header id="header">
+    <h1 class="logo">
+
+        <!--<a href="#" title="#" class="js-nav-toggler">-->
+        <a>
+            <i class="icon icon-close" (click)="toggleSidebar()"></i>
+        </a>
+        <a>Tiny 360</a>
+        <!--<a href="#" title="#">Tiny 360</a>-->
+
+    </h1>
+</header>
+<!--<div [style.display]="sidebar" [@visibilityChanged]="sidebar" class="aside">-->
+<div class="aside" [@visibilityChanged]="sidebar">
+    <sd-navbar></sd-navbar>
+</div>
+<div [@routerVisibilityChanged]="sidebar" style="border:1px solid orange">
+    <router-outlet (activate)="onActivate($event, outlet)"></router-outlet>
+</div>

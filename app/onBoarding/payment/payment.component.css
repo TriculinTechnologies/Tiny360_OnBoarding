@@ -1,0 +1,529 @@
+@charset "utf-8";
+.logo_one {
+    margin: 0% 0 0 9%;
+}
+
+.logo_two {
+    width: 100px;
+    height: 74px !important;
+}
+
+.payment_header {
+    background-color: #ff8000;
+    height: 60px;
+    width: 100%;
+    border: 1px solid #000;
+}
+
+.payment_headerdown h3 {
+    margin: 0px 0 0 0%;
+    position: absolute;
+    top: 22px;
+    left: 66px;
+}
+
+.merchant_details {
+    border: 1px solid rgba(193, 178, 178, 0.52);
+    height: 600px;
+    position: absolute;
+    top: 20%;
+    background-color: #fff;
+    left: 2%;
+    width: 96%;
+}
+
+.left_merchant h3 {
+    background-color: #F0F0F0;
+    font-size: 25px;
+    margin: 9% 0 0 0;
+}
+
+.left_merchant span {
+    font-size: 15px;
+    font-weight: 400;
+    color: rgba(134, 134, 134, 0.82);
+    line-height: 28px;
+    position: absolute;
+    top: 28%;
+}
+
+.creditcard {
+    background-color: #EAEAEA;
+    height: auto;
+    margin: 2% 0 0 0;
+}
+
+.creditcard_four {
+    position: relative;
+    display: none;
+    background: #eaeaea;
+    margin: 2% 0 0 0;
+}
+
+.creditcard_four label {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    color: #555452;
+    margin: 2% 0 0 4%;
+    text-align: justify;
+    font-weight: 400;
+}
+
+.creditcard_four input[type="text"] {
+    width: 73%;
+    height: 40px;
+    line-height: 40px;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    color: #000;
+}
+
+.right_merchant {
+    margin: 3% 0 0 4%;
+}
+
+input[type=radio] {
+    margin: 4px 0 0 1%;
+}
+
+.proceed {
+    background-color: #fefbe8;
+    width: 94%;
+    height: 74px;
+    border-radius: 5px;
+    margin: 4% 0 0 3%;
+}
+
+.proceed h6 {
+    color: rgba(0, 0, 0, 0.63);
+    font-size: 18px;
+    text-align: -webkit-left;
+    line-height: 25px;
+    margin: -10% 0 0 14%;
+    font-weight: 400;
+}
+
+.button {
+    background-color: #1b1919;
+    color: #fff;
+    height: 33px;
+    width: 17%;
+    text-align: center;
+    line-height: 33px;
+    float: left;
+    margin: 3% 0 0 4%;
+    cursor: pointer;
+    border-radius: 7px;
+}
+
+.button2 {
+    background-color: #1b1919;
+    color: #fff;
+    height: 33px;
+    width: 35%;
+    text-align: center;
+    line-height: 33px;
+    float: RIGHT;
+    margin: 3% 3% 3% 0%;
+    cursor: pointer;
+    border-radius: 7px;
+}
+
+.button2>.arrows_two {
+    margin: 0 0 0 0;
+}
+
+.proceed>.exclamation {
+    margin: 1% 0 0 2%;
+}
+
+.border {
+    border-bottom: 5px solid #18be8c;
+    width: 100%;
+    height: 0px;
+    margin: 0% 0 0 0;
+}
+
+.payment_headerdown {
+    position: relative;
+    background-color: rgba(204, 204, 204, 0.76);
+    height: 710px;
+    margin: 1% 0 0 0;
+}
+
+.left_merchant h2 {
+    background-color: #F0F0F0;
+    font-size: 25px;
+    margin: 3% 0 0 0;
+}
+
+.left_merchant>.com {
+    margin: 0 0 0 0;
+    position: absolute;
+    top: 58px;
+}
+
+.left_merchant>.last {
+    font-size: 15px;
+    font-weight: 400;
+    color: rgba(134, 134, 134, 0.82);
+    line-height: 28px;
+    position: absolute;
+    top: 34%;
+}
+
+.left_merchant>.letter {
+    font-size: 15px;
+    font-weight: 400;
+    color: rgba(134, 134, 134, 0.82);
+    line-height: 28px;
+    position: absolute;
+    top: 40%;
+}
+
+.left_merchant>.one_1 {
+    font-size: 15px;
+    font-weight: 400;
+    color: rgba(134, 134, 134, 0.82);
+    line-height: 28px;
+    position: absolute;
+    top: 46%;
+}
+
+.left_merchant>.one_2 {
+    font-size: 15px;
+    font-weight: 400;
+    color: rgba(134, 134, 134, 0.82);
+    line-height: 28px;
+    position: absolute;
+    top: 52%;
+}
+
+.left_merchant>.one_3 {
+    font-size: 15px;
+    font-weight: 400;
+    color: rgba(134, 134, 134, 0.82);
+    line-height: 28px;
+    position: absolute;
+    top: 58%;
+}
+
+.left_merchant>.one_5 {
+    font-size: 15px;
+    font-weight: 400;
+    color: rgba(134, 134, 134, 0.82);
+    line-height: 28px;
+    position: absolute;
+    top: 63%;
+}
+
+.left_merchant>.one_6 {
+    font-size: 15px;
+    font-weight: 400;
+    color: rgba(134, 134, 134, 0.82);
+    line-height: 28px;
+    position: absolute;
+    top: 68%;
+}
+
+.left_merchant>.one_7 {
+    font-size: 15px;
+    font-weight: 400;
+    color: rgba(134, 134, 134, 0.82);
+    line-height: 28px;
+    position: absolute;
+    top: 74%;
+}
+
+.left_merchant>.one_8 {
+    font-size: 15px;
+    font-weight: 400;
+    color: rgba(134, 134, 134, 0.82);
+    line-height: 28px;
+    position: absolute;
+    top: 63vh;
+}
+
+.left_merchant>.one_9 {
+    font-size: 15px;
+    font-weight: 400;
+    color: rgba(134, 134, 134, 0.82);
+    line-height: 28px;
+    position: absolute;
+    top: 75vh;
+}
+
+.left_merchant h4 {
+    background-color: #F0F0F0;
+    font-size: 25px;
+    position: absolute;
+    top: 58vh;
+    width: 92vh;
+}
+
+.payments {
+    margin: 20% 0 0 0;
+    text-align: justify;
+    font-size: 16px;
+    color: #ccc;
+    position: relative;
+    top: 0vh;
+}
+
+.creditcard h1 {
+    background-color: #f9f9f9;
+    margin: 2% 2% 0 0%;
+    font-size: 22px;
+    width: 96%;
+    float: right;
+}
+
+.creditcard h4 {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    color: #666;
+    text-align: justify;
+    margin: 0 0 0 0;
+    font-weight: 400;
+    padding: 2% 0 0 2%;
+}
+
+.creditcard h5 {
+    margin: 6% 0 0 2%;
+    float: left;
+}
+
+.creditcard_four h3 {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    color: #666;
+    text-align: justify;
+    margin: 0 0 0 0;
+    font-weight: 400;
+    padding: 2% 0 0 2%;
+}
+
+.credit input[type="number"] {
+    width: 73%;
+    height: 40px;
+    margin: -4% 0 0 24%;
+    box-shadow: none;
+    border-radius: 0;
+    outline: 0;
+    font-weight: 400;
+    border: 1px solid #ccc;
+    float: left;
+}
+
+.cvv input[type="password"] {
+    width: 16%;
+    height: 34px;
+    margin: -4% 0 0 24%;
+    border-radius: 0px;
+    border: 1px solid #ccc;
+    float: left;
+}
+
+.visa label {
+    margin: 2% 0 0 4%;
+    float: left;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: justify;
+    color: #555452;
+    width: 19%;
+}
+
+.visa input[type="text"] {
+    width: 73%;
+    height: 40px;
+    margin: 12px 0 0 20%;
+    box-shadow: none;
+    border-radius: 0;
+    outline: 0;
+    font-weight: 400;
+    border: 1px solid #ccc;
+    position: relative;
+    left: 1vh;
+    top: 0vh;
+}
+
+.clear {
+    clear: both;
+}
+
+.credit label {
+    margin: 9px 0 0px 4% !important;
+    float: left;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: justify;
+    width: 18%;
+}
+
+.credit input[type="text"] {
+    width: 73%;
+    height: 40px;
+    margin: 0 0 0 2.3%;
+    box-shadow: none;
+    border-radius: 0;
+    outline: 0;
+    font-weight: 400;
+    border: 1px solid #ccc;
+    float: left;
+}
+
+.clear {
+    clear: both;
+}
+
+.cvv h6 {
+    margin: 4% 88% 0 0;
+    float: right;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: justify;
+}
+
+.cvv input[type="text"] {
+    width: 16%;
+    height: 34px;
+    margin: -2% 0 0 25%;
+    border-radius: 0px;
+    border: 1px solid #ccc;
+    float: left;
+    position: relative;
+    top: -2.5vh;
+}
+
+.cvv>.img_ques img {
+    margin: -3% 0 0 13%;
+    float: left;
+}
+
+.clear {
+    clear: both;
+}
+
+.expiry label {
+    font-size: 16px;
+    margin: 2% 0 0 4%;
+    font-weight: 500;
+    color: #565656;
+    text-align: justify;
+    width: 18%;
+}
+
+.expiry>.select {
+    margin: 0% 0 0px 2%;
+    width: 13%;
+    height: 27px;
+    -webkit-appearance: none;
+    background-color: #ebebeb;
+    border-radius: 7px;
+    padding: 0 0 0 9px;
+}
+
+.expiry>.arrows {
+    margin: 0 0 0 -4%;
+}
+
+.expiry>.select_one {
+    margin: 2% 0 0 2%;
+    width: 13%;
+    height: 27px;
+    -webkit-appearance: none;
+    background-color: #ebebeb;
+    border-radius: 7px;
+    padding: 0 0 0 9px;
+}
+
+.expiry>.arrows_one {
+    margin: 0 0 0 -4%;
+}
+
+.expiry>.expiry_one {
+    font-size: 16px;
+    color: #6f6978;
+    margin: 2.5% 25% 0 0;
+    text-align: justify;
+    float: right;
+}
+
+.clear {
+    clear: both;
+}
+
+.purchase h5 {
+    font-size: 15px;
+    margin: 3% 0 0 4%;
+    text-align: justify;
+    float: left;
+}
+
+.purchase>.inr>.inr_one {
+    width: 6%;
+    margin: 2% 0 0 0;
+    float: left;
+}
+
+.purchase>.inr {
+    font-size: 16px;
+    text-align: justify;
+    margin: 2% 28% 0 0;
+    float: right;
+}
+
+.clear {
+    clear: both;
+}
+
+.header {
+    background: rgba(204, 204, 204, 0.56);
+    height: 75px;
+}
+
+.error {
+    color: red;
+    font-size: 13px;
+    font-weight: normal;
+    width: 69%;
+    position: relative;
+    left: 21vh;
+    top: 1vh;
+}
+
+#required {
+    width: 39%;
+    position: absolute;
+    top: 2vh;
+    left: 17vh;
+}
+
+input.ng-touched.ng-invalid {
+    border: 1px solid red !important;
+}
+
+.creditcard_five {
+    position: relative;
+    display: none;
+    background: #eaeaea;
+    margin: 2% 0 0 0;
+    height: 14em;
+}
+
+.creditcard_five label {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    color: #555452;
+    margin: 2% 0 0 4%;
+    text-align: justify;
+    font-weight: 400;
+    width: 19%;
+}
+
+.creditcard_five .netbanking {
+    width: 73%;
+    height: 40px;
+    margin: 7% 0 0 0;
+}

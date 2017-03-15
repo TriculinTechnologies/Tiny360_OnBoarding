@@ -1,0 +1,13 @@
+<p>
+    Details of Trial Plan
+</p>
+<br>
+<h3>
+    {{dateValidFrom | date: 'dd/MM/yyyy'}} ---- {{dateValidFrom | date: 'dd'}}/{{dateValidFrom | date:'MM'}}/{{dateValidFrom | date: 'yyyy'}}
+</h3>
+<br>
+<h3>
+    {{dateValidTill | date: 'dd/MM/yyyy'}} ----- {{someFormattedDate}}
+</h3>
+<br> Proceed to subscribe Tiny360 Trial-version.
+<button (click)="trialPlanSubmit()">Continue</button>
