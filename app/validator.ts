@@ -1,5 +1,6 @@
 import { FormGroup, FormArray, FormBuilder, Validators,FormControl } from '@angular/forms';
 import {  HttpService } from './http-service';
+
 // SINGLE FIELD VALIDATORS
 export function emailValidator(control: FormControl): {[key: string]: any} {
   var httpService:HttpService;
@@ -34,6 +35,7 @@ export function addressValidator(control:FormControl): {[key:string]: any} {
   return { invalidaddress: true };
   }
 }
+
 //CONTROL GROUP VALIDATORS
 export function matchingPasswords(passwordKey: string, confirmPasswordKey: string) {
   return (group: FormGroup): {[key: string]: any} => {

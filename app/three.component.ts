@@ -6,6 +6,7 @@ import {  HttpService } from './http-service';
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
 import {OffClickDirective} from "./off-click.directive";
+//import {Cookie} from 'angular2-cookie/core';
 
 
 @Component({
@@ -34,6 +35,7 @@ export class ThreeComponent implements OnInit {
   mobilepattern:RegExp= /^[0-9.\s_-]+$/;
   dropdowmshowandhide:boolean=true;
   dropdowmshowandhide1:boolean=false;
+   private processing:boolean = false;
 //   @HostListener('mouseover', ['$event.target'])
 //   onfocusout(btn:any):void {
 //       let length=this.ef.nativeElement.children[0].length;
@@ -86,8 +88,6 @@ export class ThreeComponent implements OnInit {
  
 dropdownshowandhide(){
   this.dropdowmshowandhide=!this.dropdowmshowandhide;
-
-
 }
     edit(i:number){
       let length=this.ef.nativeElement.children[0].length;
@@ -110,10 +110,10 @@ dropdownshowandhide(){
        
         //$event.stopPropagation();
     }
-      myfun(){
-  this.ef.nativeElement.children[0][6].autofocus=false;
-  this.ef.nativeElement.children[0][6].disabled=false;
-      }
+  //     myfun(){
+  // this.ef.nativeElement.children[0][6].autofocus=false;
+  // this.ef.nativeElement.children[0][6].disabled=false;
+  //     }
  keyPress(event: any,pat:any) {
     const pattern =pat;
    let inputChar = String.fromCharCode(event.charCode);
@@ -144,7 +144,8 @@ dropdownshowandhide(){
           businessAddress:any,
           imageData:any
         ){
-   
+   this.processing = true;
+     console.log("start processing");
     localStorage.setItem('threeComponent',JSON.stringify(this.userForm.value));
     this.data= (localStorage.getItem('threeComponent'));
     console.log(this.data);
@@ -155,156 +156,35 @@ dropdownshowandhide(){
         this.router.navigate(['four']);
     }, err => {
         console.log("Error occurred while saving setting",err);
+          this.processing = false;
+    //      getCookie(key: string){
+    //     return this._cookie.get(key);
+    // }
        // this.router.navigate(['one']);
-    });
+    })
       // .subscribe((registeredUsers:any) => this.registeredUsers=this.httpService.registeredUsersDetails());s
   }
   imageData:any;
   url:any;
+
 readUrl(event:any) {
-  if (event.target.files && event.target.files[0]) {
-    var reader = new FileReader();
-    let data=event.target.files[0];
-    // var data1= data.getAsBinary();
+ if (event.target.files && event.target.files[0]) {
+   var reader = new FileReader();
+   let data=event.target.files[0];
+   // var data1= data.getAsBinary();
 //this.imageData = event.target.files;
-    reader.onload = (e:any) => {
-      this.imageData = e.target.result;
-      localStorage.setItem("theImage",reader.result);
-      // localStorage.setItem("theImage",JSON.stringify(reader.result));
-      //localStorage.theImage = reader.result;
-    }
+   reader.onload = (e:any) => {
+     this.imageData = e.target.result;
+     localStorage.setItem("theImage",reader.result);
+     // localStorage.setItem("theImage",JSON.stringify(reader.result));
+     //localStorage.theImage = reader.result;
+   }
 
-    reader.readAsDataURL(event.target.files[0]);
-    
-  }
+   reader.readAsDataURL(event.target.files[0]);
+   
+ }
+}
 }
 
-}
 
 
-// import { Component ,OnInit,AfterViewInit  } from '@angular/core';
-// import {FormGroup, FormBuilder, Validators} from '@angular/forms';
-// import {  HttpService } from './http-service';
-// import { Observable } from 'rxjs';
-// import 'rxjs/add/operator/map';
-
-// @Component({
-//   moduleId: module.id,
-//   selector: 'pg-five',
-//   providers:[HttpService],
-//   templateUrl: 'three.component.html'
-// })
-// export class ThreeComponent implements OnInit{
-//   userForm: any;
-//   editFirstname:boolean = true;
-//   firstName:any;
-//   lastName:any;
-//   // userName: string;
-//   // businessName: string;
-//   // websiteName: string;
-//   // typeOfBusiness: string;
-//   // contactPersonName: string;
-//   // mobileNumber: string;
-//   // alternateMobileNumber: string;
-//   // emailId: string; 
-//   // urlName: string;
-//   //data:any;
-//   // url:any;
-//   // imageData:any;
-//   registeredUsers:Observable<any>;
-  
-// ngOnInit(){
- 
-//     this.registeredUsers=this.httpService.registeredUsersDetails()
-   
-   
-//   // this.data = JSON.parse(localStorage.getItem('fiveComponent'));
-//   // this.firstName = this.data.firstName;
-//   // this.lastName = this.data.lastName;
-//   // this.userName = this.data.userName;
-//   // this.businessName = this.data.businessName;
-//   // this.websiteName = this.data.websiteName;
-//   // this.typeOfBusiness = this.data.typeOfBusiness;
-//   // this.contactPersonName = this.data.contactPersonName;
-//   // this.mobileNumber = this.data.mobileNumber;
-//   // this.alternateMobileNumber = this.data.alternateMobileNumber;
-//   // this.emailId = this.data.emailId;
-//   // this.urlName = this.data.urlName;
-//   // this.imageData = this.data.imageData;
-//  }
-//   constructor(public fb: FormBuilder,public httpService: HttpService) {
-//     this.userForm = fb.group({
-//       firstName: ['',  Validators.required],
-//       lastName: ['',  Validators.required],
-//       // userName: ['',  Validators.required],
-//       // businessName: ['',  Validators.required],
-//       // typeOfBusiness:['', Validators.required],
-//       // websiteName: ['', Validators.required],
-//       // contactPersonName: ['', Validators.required],
-//       // mobileNumber: ['', Validators.required],
-//       // alternateMobileNumber: ['', Validators.required],
-//       // emailId: ['', Validators.required],
-//       // urlName: ['', Validators.required],
-//       // imageData: ['']
-//        //imageData: ['', Validators.required]
-//     })
-
-//   }
-
-// registeredUsersDetails(): any {
-     
-//     this.httpService
-//         .registeredUsersDetails()
-//         .subscribe((registeredUsers:any) => this.registeredUsers = registeredUsers);
-       
-//   }
-
-// submit1(firstName:any,lastName:any){
-//   firstName = firstName.trim();
-//   lastName = lastName.trim();
-//   // localStorage.setItem('fiveComponent',JSON.stringify(this.userForm.value));
-//   // this.data= (localStorage.getItem('fiveComponent'));
-//   // console.log(this.data);
-//   this.httpService.createUser(firstName,lastName)
-//       .subscribe((registeredUsers:any) => this.registeredUsers=this.httpService.registeredUsersDetails());
-// }
-
-// //   submit(){
-// //    this.readUrl(event);
-// //     localStorage.setItem('fiveComponent',JSON.stringify(this.userForm.value));
-// //     this.data= (localStorage.getItem('fiveComponent'));
-// //     console.log(this.data);
-    
-// //   }
-// //   readUrl(event:any) {
-// //   if (event.target.files && event.target.files[0]) {
-// //     var reader = new FileReader();
-// // this.imageData = event.target.files[0];
-// //     reader.onload = (e) => {
-// //       this.url = e.target.result;
-// //     }
-
-// //     reader.readAsDataURL(event.target.files[0]);
-// //     console.log(this.imageData.name);
-// //   }
-// // }
-// // ngAfterContentInit(){
-// // this.editFristName();
-// // }
-// //   editFristName(){
-
-// //     this.editFirstname = false;
-//     /// return this.editFirstname = !this.editFirstname;
-//     /// this.userForm.firstName= [{value: '', disabled: this.editFirstname},  Validators.required]
-    
-
-//   // }
-//    // "userName": "bcbcv", 
-//                                 // "businessName": "cbcvb", 
-//                                 // "typeOfBusiness": "vbcvb", 
-//                                 // "websiteName": "cbcvb",
-//                                 // "contactPersonName": "bcvbcv",
-//                                 // "mobileNumber": "bcvbcb",
-//                                 // "alternateMobileNumber": "cvbcb", 
-//                                 // "emailId": "cvbcvb"
-// }

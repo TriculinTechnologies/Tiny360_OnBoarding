@@ -1,0 +1,895 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>PlanDetails</title>
+    <meta name="description" content="...">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Icons -->
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+    <!--<link rel="stylesheet" href="../css/jquery-ui.min.css">-->
+    <link rel="stylesheet" href="../assets/css/select2.min.css">
+    <!--// <link rel="stylesheet" href="../assets/font-awesome-4.4.0/css/font-awesome.min.css">-->
+    <link rel="stylesheet" href="../assets/css/fontello.css">
+    <link href="../assets/font-awesome-4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <!--<link rel="stylesheet" href="../css/chartist.min.css">-->
+    <link rel="stylesheet" href="../assets/css/datatables.min.css">
+    <link rel="stylesheet" href="../assets/css/app.min.css">
+    <link rel="stylesheet" href="../assets/css/animate.min.css">
+    <!--<link href="../assets/css/respondend.css" rel="stylesheet" />-->
+    <!--<link href="../assets/css/plandetails_01.css" rel="stylesheet"/>-->
+
+    <!-- Modernizr -->
+    <script src="../assets/js/modernizr-2.8.3.min.js"></script>
+
+    <!-- Google fonts -->
+</head>
+
+<body>
+    <!--[if lt IE 8]>
+	<![endif]-->
+
+    <!-- Header -->
+    <header id="header">
+        <h1 class="logo">
+
+            <a title="#"><img src="assets/tmp/tiny_logo.jpg" /></a>
+        </h1>
+
+
+        <div class="container">
+
+            <!--<form id="searchForm" method="post">
+                <fieldset>
+
+                    <input id="s" type="text" placeholder="Search by Title or Request ID">
+
+                    <input type="submit" value="Submit" id="submitButton">
+
+                </fieldset>
+            </form>-->
+            <ul class="topNavigation">
+                <li>
+
+
+                    <!--Create Request-->
+
+                </li>
+                <li>
+                    <label>Language</label>
+                    <select> 
+
+<option value=""> Select Your own Language </option>
+<option value=""> English</option>
+<option value=""> French</option>
+<option value=""> Chinese</option>
+<option value=""> Czech</option>
+<option value="">Trurkish</option>
+</select>
+                </li>
+                <li>
+
+                </li>
+            </ul>
+
+        </div>
+
+    </header>
+
+    <aside class="aside">
+        <!-- User profile -->
+        <!--<div class="asideUserProfile">
+            <a href="Dashboard.html" title="#" class="c">
+                <img src="../images/CEC-logo.png" alt="#" class="img-responsive">
+
+            </a>
+        </div>-->
+        <!-- Navigation -->
+        <nav class="simpleList asideNavigation">
+            <ul>
+                <!--<li>
+                    <a href="dashboard.html" title="#">
+                        <i class="zmdi zmdi-apps zmdi-hc-fw icon"></i>
+                        <span class="hidden-xs hidden-sm">Dashboard</span>
+                    </a>
+                </li>-->
+                <!--<li>
+                    <a href="super-admin-users.html" title="#">
+                        <i class="zmdi zmdi-store zmdi-hc-fw icon"></i>
+                        <span class="hidden-xs hidden-sm">System Users</span>
+                    </a>
+                </li>-->
+                <li class="active" style="margin:26% 0 0 0">
+                    <a href="super-admin-global-setting.html" title="#">
+                        <i class="fa fa-fw fa-industry icon"></i>
+                        <span class="hidden-xs hidden-sm">PLan Selection</span>
+                    </a>
+                </li>
+                <!--<li>
+                    <a href="super-admin-user-log.html" title="#">
+                        <i class="zmdi zmdi-account-box-mail zmdi-hc-fw icon"></i>
+                        <span class="hidden-xs hidden-sm">User Log</span>
+                    </a>
+                </li>
+                <li>
+                    <a  title="#">
+                        <i class="zmdi zmdi-mood zmdi-hc-fw icon"></i>
+                        <span class="hidden-xs hidden-sm">Reports</span>
+                    </a>
+                </li>-->
+
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Page Wrap -->
+    <div class="pageWrap">
+
+        <!-- Page content -->
+        <div class="pageContent extended">
+            <div class="container">
+
+                <!-- Task Cards -->
+
+
+
+
+
+                <div class="row">
+
+
+                    <div class="col-xs-12 col-md-8 col-lg-12">
+                        <div class="box global">
+
+                            <!-- Tabs -->
+                            <ul class="nav nav-tabs userProfileTabs" role="tablist">
+                                <li [ngClass]="{active:tabIndex==1}">
+                                    <a (click)="tab(1)" style="margin:0 0 0 -6%;width:43vh;">
+                                        <p> eStarter <span class="pay"> From </span><img class="rupee_one" src="..assets/tmp/rupee.png" style="width:4%;" /><span class="pay_one">3,900</span></p>
+                                    </a>
+                                </li>
+                                <li [ngClass]="{active:tabIndex==2}">
+                                    <a (click)="tab(2)" style="width:43vh;">
+                                        <p class="para_one"> eZumbo <span class="pay"> From </span><img class="rupee_two" src="..assets/tmp/rupee.png" style="width:4%;" /><span class="pay_one">4,500</span></p>
+                                    </a>
+                                </li>
+                                <li [class.active]="tabIndex==3">
+                                    <a (click)="tab(3)" style="width:43vh;">
+                                        <p class="para_two"> eMega <span class="pay"> From </span><img class="rupee_three" src="..assets/tmp/rupee.png" style="width:4%;" /><span class="pay_one">5,400</span></p>
+                                    </a>
+                                </li>
+                                <li [class.active]="tabIndex==4">
+                                    <a (click)="tab(4)" style="left:0vh;top:0vh; position:absolute; width:29vh;">
+                                        <p class="para_seven"> Compare Plans </p>
+                                    </a>
+                                </li>
+                            </ul>
+
+                            <div class="tab-content pad_z">
+
+                                <!-- Dash Board -->
+                                <!-- Users -->
+                                <div role="tabpanel" *ngIf="tabIndex==1" class="tab-pane fade in active" id="tab-item-1">
+
+                                    <div>
+
+                                        <div class="col-xs-12 col-md-8 col-lg-8" style="padding:0; float:none;margin: 0 auto;">
+                                            <div class="box box-without-bottom-padding global_industry ">
+
+                                                <div class="container">
+
+                                                    <div class="row">
+
+                                                        <div class="col-md-6">
+
+                                                            <div class="conten_five">
+
+                                                                <p class="para_three"> 3 Months </p>
+
+                                                                <h4> 1000 Customer Orders</h4>
+
+                                                                <p class="pa_one"> 3,900</p> <span class="sp_one"> <img class="rup_one" src="assets/tmp/rupee.png"/><p class="pa_two"> 1300/month</p></span>
+
+                                                                <input type="radio" name="plans_one" value="" />
+
+                                                            </div>
+
+                                                            <div class="conten_six">
+
+                                                                <p class="para_six"> 6 Months </p>
+
+                                                                <h4> 3500 Customer Orders</h4>
+
+                                                                <p class="pa_six"> 5,850</p> <span class="sp_one"> <img class="rup_two" src="assets/tmp/rupee.png"/><p class="pa_three"> 975/month</p></span>
+
+                                                                <input type="radio" name="plans_one" value="" />
+
+                                                            </div>
+
+                                                            <div class="conten_seven">
+
+                                                                <p class="para_four"> Unlimited <br/> Months </p>
+
+                                                                <h4> 5000 Customer Orders </h4>
+
+                                                                <p class="pa_five"> 11,400</p>
+
+                                                                <input type="radio" name="plans_one" value="" checked/>
+
+                                                            </div>
+
+                                                        </div>
+
+                                                        <div class="col-md-6">
+
+                                                            <div class="conten_eight">
+
+                                                                <h5> eStarter Benefits</h5>
+
+                                                                <ul class="benefits">
+
+                                                                    <li><a><i class="fa fa-check" aria-hidden="true"></i><span class="check_one"> Shop Management</span></a></li>
+
+                                                                    <li><a><i class="fa fa-check" aria-hidden="true"></i><span class="check_two"> User Management</span></a></li>
+
+                                                                    <li><a><i class="fa fa-check" aria-hidden="true"></i><span class="check_three"> Order Management</span></a></li>
+
+                                                                    <li><a><i class="fa fa-check" aria-hidden="true"></i><span class="check_three"> Inventory Management</span></a></li>
+
+                                                                    <li><a><i class="fa fa-times" aria-hidden="true"></i><del> Employee Management</del></a></li>
+
+                                                                    <li><a><i class="fa fa-times" aria-hidden="true"></i><del> Attendence</del></a></li>
+
+                                                                    <li><a><i class="fa fa-times" aria-hidden="true"></i><del> Audit</del></a></li>
+
+                                                                    <li><a><i class="fa fa-times" aria-hidden="true"></i><del> Payroll</del></a></li>
+
+                                                                </ul>
+
+                                                                <div class="border_two"></div>
+
+                                                                <h2> eStarter- Unlimited Months for <img class="rup_eight" src="assets/tmp/rupee.png" /> 11,400</h2>
+
+                                                                <div class="content_six">
+
+                                                                    <p class="parag_one"><img class="rup_eight" src="assets/tmp/rupee.png" /> 11,400</p>
+
+                                                                    <div class="border_three"> </div>
+
+                                                                    <div class="border_eight"></div>
+
+                                                                    <a>
+                                                                        <h1>Continue</h1>
+                                                                    </a>
+
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+
+                                    <!-- Show more -->
+
+
+
+
+                                </div>
+
+
+                                <!-- Locations -->
+                                <div role="tabpanel" *ngIf="tabIndex==2" class="tab-pane fade in active" id="tab-item-2">
+
+                                    <div>
+
+                                        <div class="col-xs-12 col-md-8 col-lg-8" style="padding:0; float:none;margin: 0 auto;">
+                                            <div class="box box-without-bottom-padding global_industry">
+
+                                                <div class="container">
+
+                                                    <div class="row">
+
+                                                        <div class="col-md-6">
+
+                                                            <div class="conten_five">
+
+                                                                <p class="para_three"> 3 Months </p>
+
+                                                                <h4> 1000 Customer Orders </h4>
+
+                                                                <p class="pa_one"> 4,500</p> <span class="sp_one"> <img class="rup_one" src="assets/tmp/rupee.png"/><p class="pa_four"> 1500/month</p></span>
+
+                                                                <input type="radio" name="plans_one" value="" />
+
+                                                            </div>
+
+                                                            <div class="conten_six">
+
+                                                                <p class="para_six"> 6 Months </p>
+
+                                                                <h4> 3500 Customer Oders </h4>
+
+                                                                <p class="pa_six"> 7,250</p> <span class="sp_one"> <img class="rup_two" src="assets/tmp/rupee.png"/><p class="pa_1"> 1208.33/month</p></span>
+
+                                                                <input type="radio" name="plans_one" value="" />
+
+                                                            </div>
+
+                                                            <div class="conten_seven">
+
+                                                                <p class="para_four"> Unlimited <br/> Months </p>
+
+                                                                <h4> 5000 Customer Orders </h4>
+
+                                                                <p class="pa_five"> 13,400</p>
+
+                                                                <input type="radio" name="plans_one" value="" checked/>
+
+                                                            </div>
+
+                                                        </div>
+
+                                                        <div class="col-md-6">
+
+                                                            <div class="conten_eight">
+
+                                                                <h5> eZumbo Benefits</h5>
+
+                                                                <ul class="benefits">
+
+                                                                    <li><a><i class="fa fa-check" aria-hidden="true"></i><span class="check_one"> Shop Management</span></a></li>
+
+                                                                    <li><a><i class="fa fa-check" aria-hidden="true"></i><span class="check_two">User Management</span></a></li>
+
+                                                                    <li><a><i class="fa fa-check" aria-hidden="true"></i><span class="check_three">Order Management</span></a></li>
+
+                                                                    <li><a><i class="fa fa-check" aria-hidden="true"></i><span class="check_three">Inventory Management</span></a></li>
+
+                                                                    <li><a><i class="fa fa-check" aria-hidden="true"></i><span class="check_three">Employee Management</span></a></li>
+
+                                                                    <li><a><i class="fa fa-check" aria-hidden="true"></i><span class="check_three"> Attendence </span></a></li>
+
+                                                                    <li><a><i class="fa fa-times" aria-hidden="true"></i><del> Audit</del></a></li>
+
+                                                                    <li><a><i class="fa fa-times" aria-hidden="true"></i><del> Payroll</del></a></li>
+
+                                                                </ul>
+
+                                                                <div class="border_two"></div>
+
+                                                                <h2> eZumbo- 6 Months for <img class="rup_eight" src="assets/tmp/rupee.png" /> 7,250</h2>
+
+                                                                <div class="content_nine">
+
+                                                                    <p class="parag_two"><img class="rup_nine" src="../assets/images/rupee.png" /> 7,250</p>
+
+                                                                    <div class="border_four"> </div>
+
+                                                                    <div class="border_seven"> </div>
+
+                                                                    <a>
+                                                                        <h1>Continue</h1>
+                                                                    </a>
+
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+
+                                <!-- Type of Jobs -->
+                                <div role="tabpanel" *ngIf="tabIndex==3" class="tab-pane fade in active" id="tab-item-3">
+
+                                    <div>
+
+                                        <div class="col-xs-12 col-md-8 col-lg-8" style="padding:0; float:none;margin: 0 auto;">
+                                            <div class="box box-without-bottom-padding global_industry">
+                                                <div class="container">
+
+                                                    <div class="row">
+
+                                                        <div class="col-md-6">
+
+                                                            <div class="conten_five">
+
+                                                                <p class="para_three"> 3 Months </p>
+
+                                                                <h4> 1000 Customer Orders </h4>
+
+                                                                <p class="pa_one"> 5,400</p> <span class="sp_one"> <img class="rup_one" src="assets/tmp/rupee.png"/><p class="pa_ten"> 1800/month</p></span>
+
+                                                                <input type="radio" name="plans_one" value="" />
+
+                                                            </div>
+
+                                                            <div class="conten_six">
+
+                                                                <p class="para_six"> 6 Months </p>
+
+                                                                <h4> 3500 Customer Orders </h4>
+
+                                                                <p class="pa_six"> 8,250</p> <span class="sp_one"> <img class="rup_two" src="assets/tmp/rupee.png"/><p class="pa_nine"> 1375/month</p></span>
+
+                                                                <input type="radio" name="plans_one" value="" />
+
+                                                            </div>
+
+                                                            <div class="conten_seven">
+
+                                                                <p class="para_four"> Unlimited <br/> Months </p>
+
+                                                                <h4> 5000 Customer Orders </h4>
+
+                                                                <p class="pa_five"> 16,500</p>
+
+                                                                <input type="radio" name="plans_one" value="" checked/>
+
+                                                            </div>
+
+                                                        </div>
+
+                                                        <div class="col-md-6">
+
+                                                            <div class="conten_eight">
+
+                                                                <h5> eMega Benefits</h5>
+
+                                                                <ul class="benefits">
+
+                                                                    <li><a><i class="fa fa-check" aria-hidden="true"></i><span class="check_one"> Shop Management</span></a></li>
+
+                                                                    <li><a><i class="fa fa-check" aria-hidden="true"></i><span class="check_two">User Management</span></a></li>
+
+                                                                    <li><a><i class="fa fa-check" aria-hidden="true"></i><span class="check_three">Order Management</span></a></li>
+
+                                                                    <li><a><i class="fa fa-check" aria-hidden="true"></i><span class="check_three">Inventory Management</span></a></li>
+
+                                                                    <li><a><i class="fa fa-check" aria-hidden="true"></i><span class="check_three">Employee Management</span></a></li>
+
+                                                                    <li><a><i class="fa fa-check" aria-hidden="true"></i><span class="check_three"> Attendence </span></a></li>
+
+                                                                    <li><a><i class="fa fa-check" aria-hidden="true"></i><span class="check_three"> Audit</span></a></li>
+
+                                                                    <li><a><i class="fa fa-check" aria-hidden="true"></i><span class="check_three"> Payroll</span></a></li>
+
+                                                                </ul>
+
+                                                                <div class="border_two"></div>
+
+                                                                <h2> eMega- 6 Months for <img class="rup_eight" src="assets/tmp/rupee.png" /> 8,250</h2>
+
+                                                                <div class="content_ten">
+
+                                                                    <p class="parag_three"><img class="rup_ten" src="assets/tmp/rupee.png" /> 8,250</p>
+
+                                                                    <div class="border_five"> </div>
+
+                                                                    <div class="border_six"> </div>
+
+                                                                    <a>
+                                                                        <h1>Continue</h1>
+                                                                    </a>
+
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div role="tabpanel" *ngIf="tabIndex==4" class="tab-pane fade in active" id="tab-item-4">
+
+                                    <div>
+
+                                        <div class="col-xs-12 col-md-8 col-lg-8" style="padding:0; float:none;margin: 0 auto;">
+                                            <div class="box box-without-bottom-padding global_industry">
+                                                <div class="tableWrap dataTable table-responsive js-select pad_z" style="display:none;">
+                                                    <table class="table js-datatable">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>
+                                                                    <p>S.No.</p>
+                                                                </th>
+                                                                <th>
+                                                                    <p>Type of Issue</p>
+                                                                </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody class="admin-area">
+
+                                                            <tr>
+                                                                <td>01.</td>
+                                                                <td>Fan</td>
+
+                                                            </tr>
+                                                            <tr>
+                                                                <td>02.</td>
+                                                                <td>Printer</td>
+
+                                                            </tr>
+                                                            <tr>
+                                                                <td>03.</td>
+                                                                <td>AC</td>
+
+                                                            </tr>
+                                                            <tr>
+                                                                <td>04.</td>
+                                                                <td>UPS</td>
+
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="all_add" style="position:fixed; z-index:99; bottom:40px; right:25px;">
+                                        <a><i class="add_icon"></i></a>
+                                        <ul class="animated bounceInLeft">
+                                            <li><a href="" data-toggle="modal" data-target="#addModal4"><i class="fa fa-fw fa-file-text"></i>Add Issue</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+
+                                <!-- Salary Range -->
+
+
+
+                                <!-- Skils -->
+
+
+
+                                <!-- Skils -->
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search modal -->
+
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header rte">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h2 class="modal-title">Create Request</h2>
+                </div>
+                <div class="modal-body">
+
+                    <div class="pop_box1" id="info1">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="basicInput" placeholder=" Request Title">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+
+
+                            <div class="col-xs-12 col-sm-6 i">
+                                <div class="form-group">
+                                    <select class="js-select" style="width:100%;">
+                                        <option disabled selected> Type of Issues</option>
+                                        <option>Printer</option>
+                                        <option>Fan</option>
+                                        <option>Light</option>
+                                        <option>Internet</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <textarea class="form-control" placeholder=" Description" rows="5"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 i">
+                                <div class="form-group">
+                                    <select class="js-select" style="width:100%;">
+                                        <option disabled selected> Priority </option>
+
+                                        <option>High</option>
+                                        <option>Medium</option>
+                                        <option>Low</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="basicInput" placeholder=" Expected completing Time">
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="pop_box_btn">
+                            <ul class="fl">
+                                <li><a data-dismiss="modal">Attach File</a></li>
+                            </ul>
+                            <ul class="fr">
+                                <li><a data-dismiss="modal">Cancel</a></li>
+                                <li><a data-dismiss="modal">Create</a></li>
+                            </ul>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade in" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <form>
+                        <input type="text" class="form-control" placeholder="Type search term...">
+                        <button type="submit" class="btn">Go</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade in" id="addModal1" tabindex="-1" role="dialog" aria-labelledby="searchModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header rte" style="padding:10px 30px;">
+                    <button type="button" class="close" data-dismiss="modal" style="top:20px;">&times;</button>
+                    <h2 class="modal-title" style=" font-size:20px;">Add Cloth Type</h2>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <!--<input type="text" class="form-control" placeholder="Cloth Type">-->
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-4">
+                                <label for="inputEmail1" class="sr-only">Phone</label>
+                                <input type="text" placeholder="Cloth Type" id="inputEmail1" class="form-control">
+                            </div>
+
+                            <div class="col-xs-12 col-sm-4">
+                                <input type="text" placeholder="Cloth Code" id="inputEmail1" class="form-control">
+                            </div>
+
+                            <div class="col-xs-12 col-sm-4">
+                                <input id="datepicker-2" class="form-control datepicker" placeholder="Anniversary" type="text">
+                            </div>
+
+                        </div>
+                        <button type="submit" class="btn">Save</button>
+                        <button type="submit" class="btn">Save &amp; Add more</button>
+                        <button type="submit" class="btn">Cancel</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade in" id="addModal2" tabindex="-1" role="dialog" aria-labelledby="searchModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header rte" style="padding:10px 30px;">
+                    <button type="button" class="close" data-dismiss="modal" style="top:20px;">&times;</button>
+                    <h2 class="modal-title" style=" font-size:20px;">Add Functional Area</h2>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12">
+                                <label for="inputEmail1" class="sr-only">Functional Area</label>
+                                <input type="text" placeholder="Functional Area" id="inputEmail1" class="form-control">
+                            </div>
+
+
+
+                        </div>
+                        <button type="submit" class="btn">Save</button>
+                        <button type="submit" class="btn">Save &amp; Add more</button>
+                        <button type="submit" class="btn">Cancel</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade in" id="addModal3" tabindex="-1" role="dialog" aria-labelledby="searchModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header rte" style="padding:10px 30px;">
+                    <button type="button" class="close" data-dismiss="modal" style="top:20px;">&times;</button>
+                    <h2 class="modal-title" style=" font-size:20px;">Add Priority</h2>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12">
+                                <label for="inputEmail1" class="sr-only">Inventory</label>
+                                <input type="text" placeholder="Priority" id="inputEmail1" class="form-control">
+                            </div>
+
+
+
+                        </div>
+                        <button type="submit" class="btn">Save</button>
+                        <button type="submit" class="btn">Save &amp; Add more</button>
+                        <button type="submit" class="btn">Cancel</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade in" id="addModal4" tabindex="-1" role="dialog" aria-labelledby="searchModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header rte" style="padding:10px 30px;">
+                    <button type="button" class="close" data-dismiss="modal" style="top:20px;">&times;</button>
+                    <h2 class="modal-title" style=" font-size:20px;">Add Issue</h2>
+                </div>
+                <div class="modal-body">
+                    <form>
+
+                        <input type="text" class="form-control" placeholder="Issue">
+                        <button type="submit" class="btn">Save</button>
+                        <button type="submit" class="btn">Save &amp; Add more</button>
+                        <button type="submit" class="btn">Cancel</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade in" id="addModal5" tabindex="-1" role="dialog" aria-labelledby="searchModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header rte" style="padding:10px 30px;">
+                    <button type="button" class="close" data-dismiss="modal" style="top:20px;">&times;</button>
+                    <h2 class="modal-title" style=" font-size:20px;">Add Process</h2>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-4">
+                                <label for="inputEmail1" class="sr-only">Phone</label>
+                                <input type="text" placeholder="Process Name" id="inputEmail1" class="form-control">
+                            </div>
+
+                            <div class="col-xs-12 col-sm-4">
+                                <input type="text" placeholder="Code" id="inputEmail1" class="form-control">
+                            </div>
+
+                            <div class="col-xs-12 col-sm-4">
+                                <input type="text" placeholder="Price" id="inputEmail1" class="form-control">
+                            </div>
+
+                        </div>
+                        <button type="submit" class="btn">Save</button>
+                        <button type="submit" class="btn">Save &amp; Add more</button>
+                        <button type="submit" class="btn">Cancel</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade in" id="addModal6" tabindex="-1" role="dialog" aria-labelledby="searchModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header rte" style="padding:10px 30px;">
+                    <button type="button" class="close" data-dismiss="modal" style="top:20px;">&times;</button>
+                    <h2 class="modal-title" style=" font-size:20px;">Add User Type</h2>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <input type="text" class="form-control" placeholder="User Type">
+                        <button type="submit" class="btn">Save</button>
+                        <button type="submit" class="btn">Save &amp; Add more</button>
+                        <button type="submit" class="btn">Cancel</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade in" id="addModal7" tabindex="-1" role="dialog" aria-labelledby="searchModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header rte" style="padding:10px 30px;">
+                    <button type="button" class="close" data-dismiss="modal" style="top:20px;">&times;</button>
+                    <h2 class="modal-title" style=" font-size:20px;">Add Others</h2>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <input type="text" class="form-control" placeholder="Other">
+                        <button type="submit" class="btn">Save</button>
+                        <button type="submit" class="btn">Save &amp; Add more</button>
+                        <button type="submit" class="btn">Cancel</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS -->
+    <!--<script src="../assets/js/jquery-1.11.3.min.js"></script>
+	<script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+	<script src="../assets/js/jquery-ui.min.js"></script>
+	<script src="../assets/js/select2.min.js"></script>
+	<script src="../assets/js/parsley.min.js"></script>
+	<script src="../assets/js/throttle-debounce.min.js"></script>
+	<script src="../assets/js/jquery.shuffle.min.js"></script>
+	<script src="../assets/js/autosize.min.js"></script>
+	<script src="../assets/js/raphael-min.js"></script>
+	<script src="../assets/js/morris.min.js"></script>
+	<script src="../assets/js/Chart.min.js"></script>
+	<script src="../assets/js/chartist.min.js"></script>
+    <script src="../assets/js/datatables.min.js"></script>
+	<script src="../assets/js/jquery.fullscreen.min.js"></script>
+	<script src="../assets/js/app.min.js"></script>-->
+
+    <div class="visible-xs visible-sm extendedChecker"></div>
+</body>
+
+</html>

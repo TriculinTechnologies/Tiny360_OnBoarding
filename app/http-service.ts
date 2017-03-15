@@ -8,9 +8,11 @@ import 'rxjs/add/operator/catch';
 export class HttpService {
   
     //usersUrl:string='';
-    //usersUrl:string='http://localhost:8080/registeredUsers';
-    //http://192.168.2.131:8082/CustomerValid?Emailid=teja@gmail.com
-    usersUrl:string='http://192.168.2.131:8082/Customer/Register';
+   // usersUrl:string='http://localhost:8080/registeredUsers';
+    //usersUrl:string='http://192.168.2.131:8082/CustomerValid?Emailid=teja@gmail.com
+  // usersUrl:string='http://192.168.2.131:8081/Customer/Register';
+  usersUrl:string='http://desktop-fkqp4pv:8081/Customer/Register';
+
     private headers = new Headers({'Content-Type': 'application/json'});
 
 
@@ -19,8 +21,7 @@ export class HttpService {
    public registeredUsersDetails(): Observable<any> {
     return this.http.get(this.usersUrl)
       .map((responseData) => {
-        return responseData.json()
-               ;
+        return responseData.json();
                 });
   }
   //  search(terms: Observable<string>) {
@@ -68,46 +69,10 @@ export class HttpService {
     
       return this.http.get(emailId);
    }
+
    loginValidation(login:any): Observable<any>{
     
       return this.http.get(login);
    }   
 }
 
-// firstName: firstName,
-//                                                             lastName: lastName,
-//                                                             emailId:emailId,
-//                                                             mobileNo:mobileNo,
-//                                                             password:password,
-//                                                             businessName:businessName,
-//                                                             typeOfBusiness:typeOfBusiness,
-//                                                             website:website,
-//                                                             businessAddress:businessAddress,
-//                                                             imageData:imageData
-// "custUrl": "test",
-// "custFname": firstName,
-// "custLname": lastName,
-// "custEmailId": emailId,
-// "custMobNo": mobileNo,
-// "custUserName": "test user",
-// "custPwd": password,
-// "custBussName": businessName,
-// "custBussType": "s/w",
-// "custBussWebSite": website,
-// "custBussLogo": "",
-// "custBussAddr": businessAddress
-
-
-
-// "custUrl": "test",
-// "custFname": firstName,
-// "custLname": lastName,
-// "custEmailId": emailId,
-// "custMobNo": mobileNo,
-// "custUserName": "test user",
-// "custPwd": password,
-// "custBussName": businessName,
-// "custBussType": "s/w",
-// "custBussWebSite": website,
-// "custBussLogo": "",
-// "custBussAddr": businessAddress     

@@ -5,6 +5,10 @@ import { emailValidator, matchingPasswords ,textValidator,numberValidator,urlVal
 @Component({
   moduleId: module.id,
   selector: 'pg-one',
+  // host : {
+  //   '(error)':'setDefaultUrl()',
+  //   '[src]':'src'
+  // },
   templateUrl: 'one.component.html'
 })
 export class OneComponent  { 
@@ -12,6 +16,8 @@ export class OneComponent  {
 mobilepattern:RegExp= /^[0-9.\s_-]+$/;
 imageData:any;
 url:any;
+
+
 // mobilepattern:RegExp= /^[0-9]{1,6}+-[0-9]{1,6}+$/;
   userForm:any
   constructor(public fb: FormBuilder){
@@ -28,6 +34,7 @@ url:any;
     // alert(this.userForm.value| json);
   }
 
+
    keyPress(event: any,pat:any) {
     const pattern =pat;
    let inputChar = String.fromCharCode(event.charCode);
@@ -38,20 +45,19 @@ url:any;
    }
 }
 
-  readUrl(event:any) {
-  if (event.target.files && event.target.files[0]) {
-    var reader = new FileReader();
-    let data=event.target.files[0];
-    // var data1= data.getAsBinary();
+readUrl(event:any) {
+ if (event.target.files && event.target.files[0]) {
+   var reader = new FileReader();
+   let data=event.target.files[0];
+   // var data1= data.getAsBinary();
 //this.imageData = event.target.files;
-    reader.onload = (e:any) => {
-      this.url = e.target.result;
-      localStorage.setItem("theImage",reader.result);
-      
-    }
-
-    reader.readAsDataURL(event.target.files[0]);
-    
-  }
+   reader.onload = (e:any) => {
+     this.url = e.target.result;
+     localStorage.setItem("theImage",reader.result);
+     
+   }
+ reader.readAsDataURL(event.target.files[0]);
+   
+ }
 }
 }
