@@ -1,0 +1,112 @@
+@charset "utf-8";
+/* CSS Document */
+
+img{ margin:0% 0 0 0%; width:100%;}
+
+body{background-color:rgba(165, 128, 3, 0.26);}
+
+.content_1{ position:fixed !important; z-index:9999999 !important; top:25%; left:27%;}
+
+.background_1{ margin: 0 0 0 0;
+    /* text-align: center; */
+    position: relative;
+    z-index: 999 !important;
+    top: 21%;
+    left: 10%;
+    width: 75% !important;
+    height: 94% !important;}
+    
+.content_1 h2{
+    font-family: 'Lato', sans-serif;
+    font-size: 25px;
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+    z-index: 9999 !important;
+    top: 6%;
+    position: absolute;
+    left: 18%;
+    }
+    
+.content_1 h3{
+    font-family: 'Lato', sans-serif;
+    font-size: 25px;
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+    z-index: 9999 !important;
+    top: 56%;
+    position: absolute;
+    left: 30%;
+}    
+    
+.content_1 a input[type="button"]{ 
+    font-family: 'Lato', sans-serif;
+    font-size: 22px;
+    color: #fff;
+    border: none;
+    background-color: #18be8c;
+    outline: none;
+    width: 200px;
+    height: 55px;
+    line-height: 55px;
+    text-align: center;
+    z-index: 99999999 !important;
+    position: absolute;
+    top: 22%;
+    left: 32%;
+    }
+
+
+.content_1 a.boxclose{
+   /*height: 42px; */
+    position: absolute;
+    /* width: 30px; */
+    /* background-color: #c0c0c0; */
+    /* border: 1px solid black; */
+    /* margin-top: 23%; */
+    /* margin-left: 68%; */
+    cursor: pointer;
+    color: white;
+    /* border-radius: 40px; */
+    /* padding-left: 9px; */
+    /* padding-top: 4px; */
+    z-index: 9999 !important;
+    /* width: 0% !important; */
+    top: 5%;
+    left: 100%;
+}
+
+.content_1 input[type="submit"]{ 
+    font-family: 'Lato', sans-serif;
+    font-size: 22px;
+    color: #fff;
+    border: none;
+    background-color: #bbbbbb;
+    outline: none;
+    width: 200px;
+    height: 55px;
+    line-height: 55px;
+    text-align: center;
+    z-index: 99999999 !important;
+    position: absolute;
+    top: 72%;
+    left: 32%;
+    font-weight: 400;} 
+
+.banner{ opacity: 0.3;}
+
+.border_15{ 
+    border-bottom: 1px solid #FFF;
+    width: 66%;
+    position: absolute;
+    top: 49%;
+    left: 14.4%;
+    z-index: 999;}
+
+/*.border_16{border-bottom: 1px solid #FFF;
+    width: 72%;
+    position: absolute;
+    top: 72%;
+    left: 22%;
+    z-index: 999;}*/

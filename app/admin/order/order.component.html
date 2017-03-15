@@ -1,0 +1,109 @@
+<div class="pageWrap">
+    <div class="pageContent extended">
+        <div class="container">
+            <h1 class="pageTitle" style="float:left;">
+                <a>Order Creation-Please Add Items To your Order Here</a>
+            </h1>
+            <p style="display:none; float:right; margin:20px 0 0 0;">
+                <button type="button" class="btn btn-primary btn" data-toggle="modal" data-target="#myModal">
+                    Add user
+                </button>
+            </p>
+            <div class="all_add" style="position:fixed; z-index:99; bottom:30px; right:30px; display:none;">
+                <a href="" data-toggle="modal" data-target="#myModal"><img src="assets/img/icon/plus.png" />
+                </a>
+            </div>
+            <div style="clear:both; display:block;"></div>
+            <div class="all_add " style="position:fixed; z-index:99; bottom:40px; right:25px; "><a data-toggle="modal" data-target="#myModal"><i class="add_icon"></i></a>
+
+            </div>
+
+            <div class="box box-without-bottom-padding orders">
+                <div class="tableWrap dataTable table-responsive js-select pad_z">
+                    <form [formGroup]="userForm">
+                        <table class="table js-datatable" id="dataTable">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <p>Item.No.</p>
+                                    </th>
+                                    <th>Product Selection</th>
+                                    <th>Quantity</th>
+                                    <th>Process</th>
+                                    <th>Cost</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <h1></h1>
+                                    </td>
+                                    <td>
+                                        <span id="category">
+                                <select [(ngModel)]="selectcategory" formControlName="category" (change)="catagorychange(selectcategory)">
+                                    <option *ngFor="let category of Data.categorynames; let i=index" value={{category.catagoryname}} >{{category.catagoryname}}</option>
+                                </select>
+                            </span>
+                                    </td>
+                                    <td id="unit">
+                                        <input type="number" [(ngModel)]="quntitynumber" formControlName="number" value="number" min="0" (change)="QuantiyChange(quntitynumber)" />
+                                    </td>
+                                    <td>
+                                        <p-multiSelect class=" " [options]="keywords" [(ngModel)]="selectprocess" formControlName="process" (onChange)="processchange(selectprocess)"></p-multiSelect>
+                                    </td>
+                                    <td id="cost">
+                                        {{formcost}}
+                                    </td>
+
+                                    <td>
+                                        <span> 
+                               <input class="button edit"  style="" type="button" [disabled]="!userForm.valid" [hidden]="addBtnHide" (click)="orderItemsAdd()" value="Add"/>
+                            </span>
+                                        <span>
+                               <input class="button edit"  style="" type="button" [disabled]="!userForm.valid" [hidden]="updateBtnHide" (click)="UpdateToOrderInsertItems()" value="Update"/>
+                            </span>
+                                        <span>
+                                 <button (click)="orderformReset()">Reset</button>
+                            </span>
+                                        <span><button (click)="orderformCancel()">cancel</button></span>
+                                    </td>
+                                </tr>
+                                <tr *ngFor="let order of orders;let i=index">
+                                    <td>
+                                        <p>{{i+1}}</p>
+                                    </td>
+                                    <td style="position:relative; left:-5vh;">
+                                        <p class="category_one">{{order.category}}</p>
+                                    </td>
+                                    <td style="position:relative; left:-5vh;"> <span class="one">{{order.number}}</span></td>
+                                    <td style="position:relative; left:-5vh;">
+                                        <p class="process_one">{{order.process }}</p>
+                                    </td>
+                                    <td style="position:relative; left:-5vh;">
+                                        <h4>{{order.cost}}</h4>
+                                    </td>
+                                    <td style="position: relative;left: 0vh;">
+                                        <input class="button edit" type="button" (click)="UpdateValues(i)" value="Edit" />
+                                        <input class="button delete" type="button" (click)="deleteorderInsertItems(i)" value="Delete">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+
+                                    <td>
+                                        <p class="totalcost"> Total cost = {{totalcost}}/-</p>
+                                    </td>
+                                    <td><span class="create"> <input type="button"    (click)="createorder()" value="Create Order"/></span></td>
+                            </tbody>
+
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

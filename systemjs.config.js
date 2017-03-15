@@ -12,6 +12,7 @@
         map: {
             // our app is within the app folder
             app: 'app',
+            'ng2-idle': 'node_modules/ng2-idle',
 
             // angular bundles
             '@angular/core': 'npm:@angular/core/bundles/core.umd.js',
@@ -25,7 +26,8 @@
 
             // other libraries
             'rxjs': 'npm:rxjs',
-            'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js'
+            'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
+            'crypto-js': 'node_modules/crypto-js/crypto-js.js'
         },
         // packages tells the System loader how to load when no filename and/or no extension
         packages: {
@@ -35,11 +37,10 @@
             },
             rxjs: {
                 defaultExtension: 'js'
+            },
+            'ng2-idle': {
+                defaultExtension: 'js'
             }
-        },
-        // 'angular2-cookie': {
-        //     main: './core.js',
-        //     defaultExtension: 'js'
-        // }
+        }
     });
 })(this);

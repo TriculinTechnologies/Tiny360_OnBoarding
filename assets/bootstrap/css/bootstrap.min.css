@@ -96,7 +96,7 @@ button, select {
 	text-transform: none
 }
 button, html input[type=button], input[type=reset], input[type=submit] {
-	-webkit-appearance: button;
+	/*-webkit-appearance: button;*/
 	cursor: pointer
 }
 button[disabled], html input[disabled] {
@@ -2237,7 +2237,7 @@ input[type=search] {
 	box-sizing: border-box
 }
 input[type=checkbox], input[type=radio] {
-	margin: 4px 0 0;
+	margin: 4px 0 0 -11%;
 	margin-top: 1px\9;
 	line-height: normal
 }
